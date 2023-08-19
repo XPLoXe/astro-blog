@@ -1,0 +1,32 @@
+@tailwind base;
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  a {
+    @apply text-blue-600 underline;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .card {
+    background-color: theme("colors.white");
+    border-radius: theme("borderRadius.lg");
+    padding: theme("spacing.6");
+    box-shadow: theme("boxShadow.xl");
+  }
+
+  .h1 {
+    font-size: 30px;
+  }
+  /* ... */
+}
