@@ -1,13 +1,14 @@
 ---
 import Showcase from "../components/Showcase.astro";
+import Features from "../components/Features.astro";
 import Layout from "../layouts/Layout.astro";
 
 const name = "Hello World";
 ---
 
 <Layout>
-  <Showcase />
-  <h1>Hello World!</h1>
+  <Showcase showExtra={true} />
+  <Features />
 </Layout>
 
 <style></style>
