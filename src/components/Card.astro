@@ -2,12 +2,13 @@
 export interface Props {
   title: string;
   body: string;
+  dark?: boolean;
 }
 
-const { title, body } = Astro.props as Props;
+const { title, body, dark = false } = Astro.props as Props;
 ---
 
-<div class="card">
+<div class={`card ${dark && "dark"}`}>
   <h3>{title}</h3>
   <p>{body}</p>
 </div>
@@ -19,5 +20,10 @@ const { title, body } = Astro.props as Props;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+  }
+
+  .dark {
+    background: var(--color-primary);
+    color: white;
   }
 </style>
