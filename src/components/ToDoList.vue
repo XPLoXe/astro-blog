@@ -17,8 +17,9 @@
           <span :class="{ completed: todo.completed }">
             <input
               type="checkbox"
-              v-model="todo.completed"
               style="margin-right: 10%"
+              v-on:change="completeToDo(index)"
+              :checked="todo.completed"
             />
             <span class="text">{{ todo.text }} </span>
 
@@ -62,6 +63,16 @@ const saveToDoLocally = () => {
   localStorage.setItem("todos", JSON.stringify(todos.value));
 };
 
+const removeTodo = (index) => {
+  todos.value.splice(index, 1);
+  saveToDoLocally();
+};
+
+function completeToDo(index) {
+  todos.value[index].completed = !todos.value[index].completed;
+  saveToDoLocally();
+}
+
 function fetchToDoLocally() {
   const localToDo = localStorage.getItem("todos");
   if (localToDo) {
@@ -69,15 +80,8 @@ function fetchToDoLocally() {
     const localToDoItems = JSON.parse(localToDo);
     todos.value = localToDoItems;
     //todos.value.push({ text: localToDo.text, completed: localToDo.completed });
-    console.log("valores:");
-    console.log(todos.value);
   }
 }
-
-const removeTodo = (index) => {
-  todos.value.splice(index, 1);
-  saveToDoLocally();
-};
 </script>
 
 <style>
