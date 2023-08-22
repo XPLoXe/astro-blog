@@ -8,6 +8,7 @@
         placeholder="Add a new todo"
       />
       <button @click="addTodo">Add</button>
+      <button @click="clearToDos">Clear All</button>
     </div>
 
     <ul>
@@ -32,7 +33,12 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+
+onMounted(() => {
+  console.log("mounted");
+  fetchToDoLocally();
+});
 
 const newTodo = ref("");
 const todos = ref([]);
@@ -41,12 +47,36 @@ const addTodo = () => {
   if (newTodo.value.trim()) {
     todos.value.push({ text: newTodo.value, completed: false });
     newTodo.value = "";
-    console.log("check");
+    saveToDoLocally();
   }
 };
 
+const clearToDos = () => {
+  localStorage.clear("todos");
+  todos.value = "";
+  console.log(todos.value);
+};
+
+const saveToDoLocally = () => {
+  console.log("saved");
+  localStorage.setItem("todos", JSON.stringify(todos.value));
+};
+
+function fetchToDoLocally() {
+  const localToDo = localStorage.getItem("todos");
+  if (localToDo) {
+    console.log("valores agarrados");
+    const localToDoItems = JSON.parse(localToDo);
+    todos.value = localToDoItems;
+    //todos.value.push({ text: localToDo.text, completed: localToDo.completed });
+    console.log("valores:");
+    console.log(todos.value);
+  }
+}
+
 const removeTodo = (index) => {
   todos.value.splice(index, 1);
+  saveToDoLocally();
 };
 </script>
 
