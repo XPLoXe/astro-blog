@@ -42,7 +42,7 @@ onMounted(() => {
 });
 
 const newTodo = ref("");
-const todos = ref([]);
+let todos = ref([]);
 
 const addTodo = () => {
   if (newTodo.value.trim()) {
@@ -55,7 +55,7 @@ const addTodo = () => {
 const clearToDos = () => {
   localStorage.clear("todos");
   todos.value = "";
-  console.log(todos.value);
+  todos = ref([]);
 };
 
 const saveToDoLocally = () => {
