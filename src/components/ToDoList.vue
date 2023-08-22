@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="min-height: 37vh">
     <div style="text-align: center; margin-bottom: 5%">
       <input
         type="text"
@@ -84,7 +84,7 @@ function fetchToDoLocally() {
 }
 </script>
 
-<style>
+<style scoped>
 .completed {
   text-decoration: line-through;
 }
