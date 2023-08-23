@@ -11,6 +11,7 @@ import logo from "../images/title.png";
     <div class="logo">
       <a href="index.html">
         <img
+          class="icon"
           width="96"
           height="96"
           src="https://img.icons8.com/nolan/96/year-of-monkey.png"
@@ -20,28 +21,30 @@ import logo from "../images/title.png";
       </a>
     </div>
 
-    <nav role="navigation" class="primary-navigation">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li>
-          <a href="#">Work &dtrif;</a>
-          <ul class="dropdown">
-            <li><a href="/game">Games</a></li>
-            <li><a href="/about">Web Development</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">Tools &dtrif;</a>
-          <ul class="dropdown">
-            <li><a href="/to-do-list">To Do List</a></li>
-            <li><a href="/habit-tracker">Habit Tracker</a></li>
-          </ul>
-        </li>
+    <div class="dropdown">
+      <nav role="navigation" class="primary-navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li>
+            <a href="#">Work &dtrif;</a>
+            <ul class="dropdown">
+              <li><a href="/game">Games</a></li>
+              <li><a href="/about">Web Development</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Tools &dtrif;</a>
+            <ul class="dropdown">
+              <li><a href="/to-do-list">To Do List</a></li>
+              <li><a href="/habit-tracker">Habit Tracker</a></li>
+            </ul>
+          </li>
 
-        <li><a href="/about">About</a></li>
-        <li><a href="/blog">Blog</a></li>
-      </ul>
-    </nav>
+          <li><a href="/about">About</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
 
@@ -145,10 +148,42 @@ import logo from "../images/title.png";
     padding: 0 20px;
   }
 
+  .header .container {
+    grid-gap: 20px;
+    padding: 0 20px;
+  }
+
+  @media (max-width: 930px) {
+    .header .container {
+      grid-template-columns: 1fr;
+      display: grid;
+    }
+  }
+
   .header {
     height: 100px;
     background: var(--color-primary);
   }
+
+  @media (max-width: 542px) {
+    .header {
+      height: 175px;
+    }
+    .icon {
+      margin: auto;
+    }
+  }
+
+  @media (max-width: 541px) {
+    .header .container .logo .icon {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .header .container .logo .icon {
+  }
+
   .header img {
     vertical-align: middle;
     margin-top: 0px;
