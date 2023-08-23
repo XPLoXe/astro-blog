@@ -1,8 +1,6 @@
 # Personal Blog
 
-```
 [![Open in Browser](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://storied-cat-7a7319.netlify.app/)
-```
 
 ## 🧞 What you'll find
 
