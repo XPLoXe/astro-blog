@@ -1,5 +1,5 @@
 ---
-import logo from "../images/logo.svg";
+import logo from "../images/title.png";
 ---
 
 <header class="header">
@@ -10,7 +10,13 @@ import logo from "../images/logo.svg";
   <div class="container">
     <div class="logo">
       <a href="index.html">
-        <img src={logo} alt="" />
+        <img
+          width="96"
+          height="96"
+          src="https://img.icons8.com/nolan/96/year-of-monkey.png"
+          alt="year-of-monkey"
+        />
+        <img src={logo} />
       </a>
     </div>
 
@@ -144,7 +150,7 @@ import logo from "../images/logo.svg";
     background: var(--color-primary);
   }
   .header img {
-    height: 35px;
     vertical-align: middle;
+    margin-top: 20px;
   }
 </style>
