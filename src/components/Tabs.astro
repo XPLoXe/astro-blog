@@ -6,6 +6,15 @@ export interface Props {
 }
 
 const { headings, contents, activeColor = "#A741FF" } = Astro.props as Props;
+
+// <Tabs
+//         activeColor="purple"
+//         headings={["NPM", "PNPM", "YARN"]}
+//         contents={[
+//           "$ npm create astro@latest",
+//           "$ pnpm create astro@latest",
+//           "$ yarn create astro",
+//         ]}
 ---
 
 <!-- Tabs -->
