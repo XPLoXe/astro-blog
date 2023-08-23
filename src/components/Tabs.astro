@@ -11,7 +11,7 @@ const { headings, contents, activeColor = "#A741FF" } = Astro.props as Props;
 <!-- Tabs -->
 <div class="tabs">
   <ul class="tabs-header">
-    {headings.map((heading) => <li>{heading}</li>)}
+    {headings.map((heading) => <li class="glow-element">{heading}</li>)}
   </ul>
   <ul class="tabs-content">
     {contents.map((content) => <li class="tab">{content}</li>)}
@@ -25,7 +25,7 @@ const { headings, contents, activeColor = "#A741FF" } = Astro.props as Props;
 
   .tabs-header {
     display: flex;
-    background: #333;
+    background: #320036;
     color: #fff;
     padding: 10px 20px;
   }
@@ -33,6 +33,11 @@ const { headings, contents, activeColor = "#A741FF" } = Astro.props as Props;
   .tabs-header li {
     margin-right: 20px;
     cursor: pointer;
+    transition: box-shadow 0.3 ease;
+  }
+
+  .tabs-header:hover {
+    box-shadow: 5 5 300px 100px rgba(255, 0, 0, 0.7);
   }
 
   .tabs-content {

@@ -82,6 +82,43 @@ h3 {
   font-size: 25px;
 }
 
+.glow-element {
+  width: 100px;
+  height: 50px;
+  background-color: #320036;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease; /* Add transition for smooth effect */
+}
+
+.glow-element:hover {
+  box-shadow: 0 0 20px 5px #9f04c9;
+}
+
+.glow-text {
+  font-size: 24px;
+  color: #333;
+  transition: text-shadow 0.3s ease; /* Add transition for smooth effect */
+}
+
+.glow-text:hover {
+  text-shadow: 0 0 10px #9f04c9;
+}
+
+.glow-circle {
+  width: 100px;
+  height: 100px;
+  background-color: #333;
+  border-radius: 50%; /* Creates a circular shape */
+  transition: box-shadow 0.3s ease; /* Add transition for smooth effect */
+}
+
+.glow-circle:hover {
+  box-shadow: 0 0 20px 10px #9f04c9;
+}
+
 @media (max-width: 960px) {
   .logos-small {
     display: block;
