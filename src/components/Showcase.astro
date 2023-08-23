@@ -1,5 +1,5 @@
 ---
-import logos from "../images/framework-logos.png";
+import logos from "../images/new-logos.png";
 import logosSmall from "../images/framework-logos-small.png";
 
 export interface Props {
@@ -10,7 +10,7 @@ export interface Props {
 
 const {
   heading = "Personal Blog",
-  text = "Powered by Astro",
+  text = "Powered by",
   showExtra = false,
 } = Astro.props as Props;
 ---
@@ -27,7 +27,7 @@ const {
     showExtra && (
       <>
         <div class="showcase-img">
-          <img class="logos" src={logos} alt="" />
+          <img class="logos" src={logos} alt="" width="900" height="80" />
           <img class="logos-small" src={logosSmall} alt="" />
         </div>
       </>
