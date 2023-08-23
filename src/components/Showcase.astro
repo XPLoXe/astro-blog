@@ -1,6 +1,6 @@
 ---
 import logos from "../images/new-logos.png";
-import logosSmall from "../images/framework-logos-small.png";
+import logosSmall from "../images/new-logos-small.png";
 
 export interface Props {
   heading?: string;
@@ -28,7 +28,13 @@ const {
       <>
         <div class="showcase-img">
           <img class="logos" src={logos} alt="" width="900" height="80" />
-          <img class="logos-small" src={logosSmall} alt="" />
+          <img
+            class="logos-small"
+            src={logosSmall}
+            alt=""
+            width="250px"
+            height="80px"
+          />
         </div>
       </>
     )
