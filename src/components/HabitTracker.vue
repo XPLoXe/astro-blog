@@ -1,5 +1,5 @@
 <template>
-  <div style="text-align: center; margin-bottom: 5%">
+  <div style="text-align: center; margin-bottom: 5%" v-cloak>
     <input
       type="text"
       v-model="newHabit"
@@ -164,6 +164,10 @@ export default {
 </script>
 
 <style>
+[v-cloak] {
+  display: none;
+}
+
 .spreadsheet {
   display: grid;
 }
