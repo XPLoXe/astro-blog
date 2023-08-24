@@ -76,7 +76,6 @@ function completeToDo(index) {
 function fetchToDoLocally() {
   const localToDo = localStorage.getItem("todos");
   if (localToDo) {
-    console.log("valores agarrados");
     const localToDoItems = JSON.parse(localToDo);
     todos.value = localToDoItems;
     //todos.value.push({ text: localToDo.text, completed: localToDo.completed });
