@@ -11,4 +11,7 @@ export default defineConfig({
   integrations: [vue()],
   output: "hybrid",
   adapter: netlify(),
+  experimental: {
+    viewTransitions: true,
+  },
 });
