@@ -53,7 +53,7 @@ const addTodo = () => {
 };
 
 const clearToDos = () => {
-  localStorage.clear("todos");
+  localStorage.removeItem("todos");
   todos.value = "";
   todos = ref([]);
 };
