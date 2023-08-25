@@ -1,6 +1,6 @@
 # Personal Blog
 
-[Open in Browser](https://storied-cat-7a7319.netlify.app/)
+[Open in Browser](https://alejandro-bocchicchio.netlify.app/)
 
 ## 🧞 What you'll find
 
