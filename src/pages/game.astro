@@ -8,6 +8,8 @@ export interface Props {
   currentPath?: Object;
 }
 
+export const prerender = false;
+
 const { currentPath = Astro.url.searchParams } = Astro.props as Props;
 ---
 
