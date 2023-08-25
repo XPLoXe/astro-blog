@@ -6,12 +6,16 @@ export interface Props {
   heading?: string;
   text?: string;
   showExtra?: boolean;
+  showRepository?: boolean;
+  repository?: string;
 }
 
 const {
   heading = "Personal Blog",
   text = "",
   showExtra = false,
+  showRepository = false,
+  repository = "",
 } = Astro.props as Props;
 ---
 
@@ -21,6 +25,13 @@ const {
     <p>
       {text}
     </p>
+    {
+      showRepository && (
+        <a href={repository} style="color: blueviolet">
+          Git Hub Repository
+        </a>
+      )
+    }
   </div>
 
   {
@@ -42,6 +53,14 @@ const {
 </section>
 
 <style>
+  a {
+    color: #a741ff;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
   .showcase {
     height: auto;
     background-color: var(--color-secondary);

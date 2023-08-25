@@ -3,22 +3,53 @@ import Unity from "../components/Unity.vue";
 import Showcase from "../components/Showcase.astro";
 import Layout from "../layouts/Layout.astro";
 
-// export const prerender = false;
-// const currentPath = Astro.url.searchParams;
+export interface Props {
+  prerender?: boolean;
+  currentPath?: Object;
+}
+
+const { prerender = false, currentPath = Astro.url.searchParams } =
+  Astro.props as Props;
 ---
 
 <Layout title="Blog">
-  <Showcase
-    heading="Balls of Steel"
-    text="Remain the sole ball on the platform"
-  />
+  {
+    currentPath.toString() ===
+      "search=https%3A%2F%2F64e50a20839a9019d51bb911--delicate-belekoy-4e9031.netlify.app%2F" && (
+      <Showcase
+        heading="Balls of Steel"
+        text="Remain the sole ball on the platform"
+        repository="https://github.com/XPLoXe/Balls-of-Steel"
+        showRepository={true}
+      />
+    )
+  }
+
+  {
+    currentPath.toString() ===
+      "search=https%3A%2F%2F64e88ff4dd8a1c0a6a4fb402--wondrous-cajeta-945cf0.netlify.app%2F" && (
+      <Showcase
+        heading="Clicky Crates"
+        text="Click as many crates as you can. Watch out for the skulls"
+        repository="https://github.com/XPLoXe/clicky-crates"
+        showRepository={true}
+      />
+    )
+  }
+
   <section class="page-content">
     <Unity client:load />
   </section>
 </Layout>
 
 <script>
-  // const urlSearchParams = new URLSearchParams(window.location.search);
-  // const params = Object.fromEntries(urlSearchParams.entries());
-  // console.log(params);
+  class Showcase extends HTMLElement {
+    constructor() {
+      super();
+      const currentPath = this.dataset.heading;
+      const urlSearchParams = new URLSearchParams(window.location.search);
+      const params = Object.fromEntries(urlSearchParams.entries());
+      console.log(params);
+    }
+  }
 </script>
