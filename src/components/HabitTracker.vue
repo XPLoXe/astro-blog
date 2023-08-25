@@ -6,8 +6,9 @@
       @keyup.enter="addHabit"
       placeholder="Add a Habit to track"
     />
-    <button @click="addHabit">Add</button>
-    <button @click="clearHabits">Clear All</button>
+    <button @click="addHabit">Add Habit</button>
+    <button @click="clearAllConfirmation">Clear All Checkboxes</button>
+    <button @click="removeAllConfirmation">Eliminate All Habits</button>
   </div>
   <div class="table-responsive" v-if="habits.length > 0">
     <table>
@@ -58,7 +59,7 @@ export default {
   data() {
     return {
       newHabit: "",
-      habits: [{ name: String, check: [] }],
+      habits: [],
       rows: [
         ["", "", ""],
         ["", "", ""],
@@ -126,6 +127,20 @@ export default {
         this.saveHabitLocally();
       }
     },
+
+    saveHabitLocally() {
+      localStorage.setItem("habits", JSON.stringify(this.habits));
+      console.log("saved");
+    },
+    fetchHabitsLocally() {
+      const localHabit = localStorage.getItem("habits");
+      if (localHabit) {
+        const localHabitItems = JSON.parse(localHabit);
+        this.habits = localHabitItems;
+        console.log("habits loaded");
+      }
+    },
+
     removeConfirmation(index) {
       const confirmed = window.confirm(
         "Are you sure you want to eliminate this Habit?"
@@ -138,21 +153,35 @@ export default {
       this.habits.splice(index, 1);
       this.saveHabitLocally();
     },
+
+    clearAllConfirmation() {
+      const confirmed = window.confirm(
+        "Are you sure you want to clear ALL of your habits marks?"
+      );
+      if (confirmed) {
+        this.clearHabits();
+      }
+    },
     clearHabits() {
+      this.habits.forEach((habit) => {
+        habit.check = [];
+        console.log("loop");
+      });
+      this.saveHabitLocally();
+      location.reload();
+    },
+
+    removeAllConfirmation() {
+      const confirmed = window.confirm(
+        "Are you sure you want to ELIMINATE ALL of your habits?"
+      );
+      if (confirmed) {
+        this.removeAll();
+      }
+    },
+    removeAll() {
       localStorage.clear("habits");
       this.habits = [];
-    },
-    saveHabitLocally() {
-      localStorage.setItem("habits", JSON.stringify(this.habits));
-      console.log("saved");
-    },
-    fetchHabitsLocally() {
-      const localHabit = localStorage.getItem("habits");
-      if (localHabit) {
-        const localHabitItems = JSON.parse(localHabit);
-        this.habits = localHabitItems;
-        console.log("habits loaded");
-      }
     },
   },
   created() {
