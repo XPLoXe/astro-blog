@@ -180,7 +180,7 @@ export default {
       }
     },
     removeAll() {
-      localStorage.clear("habits");
+      localStorage.removeItem("habits");
       this.habits = [];
     },
   },
