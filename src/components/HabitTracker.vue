@@ -6,9 +6,9 @@
       @keyup.enter="addHabit"
       placeholder="Add a Habit to track"
     />
-    <button @click="addHabit">Add Habit</button>
-    <button @click="clearAllConfirmation">Clear All Checkboxes</button>
-    <button @click="removeAllConfirmation">Eliminate All Habits</button>
+    <button @click.prevent="addHabit">Add Habit</button>
+    <button @click.prevent="clearAllConfirmation">Clear All Checkboxes</button>
+    <button @click.prevent="removeAllConfirmation">Eliminate All Habits</button>
   </div>
   <div class="table-responsive" v-if="habits.length > 0">
     <table>
@@ -40,7 +40,7 @@
             height="15"
             src="https://img.icons8.com/emoji/48/cross-mark-emoji.png"
             alt="cross-mark-emoji"
-            @click="removeConfirmation(rowIndex)"
+            @click.prevent="removeConfirmation(rowIndex)"
           />
         </td>
       </tr>
