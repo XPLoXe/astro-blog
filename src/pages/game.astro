@@ -8,8 +8,9 @@ export interface Props {
   currentPath?: Object;
 }
 
-const { prerender = false, currentPath = Astro.url.searchParams } =
-  Astro.props as Props;
+export const prerender = true;
+
+const { currentPath = Astro.url.searchParams } = Astro.props as Props;
 ---
 
 <Layout title="Blog">
@@ -39,6 +40,9 @@ const { prerender = false, currentPath = Astro.url.searchParams } =
 
   <section class="page-content">
     <Unity client:load />
+    <p>dummy text</p>
+    {currentPath.toString()}
+    <p>more dummy text</p>
   </section>
 </Layout>
 

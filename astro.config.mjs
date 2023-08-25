@@ -9,6 +9,6 @@ import netlify from "@astrojs/netlify/functions";
 export default defineConfig({
   //integrations: [tailwind(), vue()],
   integrations: [vue()],
-  output: "hybrid",
+  output: "server",
   adapter: netlify(),
 });
