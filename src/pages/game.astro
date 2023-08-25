@@ -38,6 +38,8 @@ const { currentPath = Astro.url.searchParams } = Astro.props as Props;
 
   <section class="page-content">
     <Unity client:load />
+
+    {currentPath.toString()}
   </section>
 </Layout>
 
