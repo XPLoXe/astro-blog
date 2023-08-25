@@ -2,6 +2,9 @@
 import Unity from "../components/Unity.vue";
 import Showcase from "../components/Showcase.astro";
 import Layout from "../layouts/Layout.astro";
+
+// export const prerender = false;
+// const currentPath = Astro.url.searchParams;
 ---
 
 <Layout title="Blog">
@@ -10,6 +13,12 @@ import Layout from "../layouts/Layout.astro";
     text="Remain the sole ball on the platform"
   />
   <section class="page-content">
-    <Unity />
+    <Unity client:load />
   </section>
 </Layout>
+
+<script>
+  // const urlSearchParams = new URLSearchParams(window.location.search);
+  // const params = Object.fromEntries(urlSearchParams.entries());
+  // console.log(params);
+</script>

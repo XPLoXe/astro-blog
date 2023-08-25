@@ -7,7 +7,7 @@
       allowfullscreen=""
       allowvr=""
       mozallowfullscreen="true"
-      src="https://64e50a20839a9019d51bb911--delicate-belekoy-4e9031.netlify.app/"
+      v-bind:src="url"
       width="1000"
       height="700"
       onmousewheel=""
@@ -19,6 +19,19 @@
 <script>
 export default {
   name: "unity",
+  data() {
+    return {
+      url: "",
+    };
+  },
   // Vue component options
+  mounted() {
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+    console.log(params);
+    this.url = params.search;
+    console.log(this.url);
+    //https://64e50a20839a9019d51bb911--delicate-belekoy-4e9031.netlify.app/
+  },
 };
 </script>
