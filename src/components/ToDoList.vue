@@ -104,6 +104,7 @@ function handleDrop(targetIndex) {
   const draggedItem = todos.value[draggedIndex];
   todos.value.splice(draggedIndex, 1);
   todos.value.splice(targetIndex, 0, draggedItem);
+  saveToDoLocally();
 }
 </script>
 
