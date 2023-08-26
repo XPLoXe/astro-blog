@@ -60,11 +60,6 @@ export default {
     return {
       newHabit: "",
       habits: [],
-      rows: [
-        ["", "", ""],
-        ["", "", ""],
-        ["", "", ""],
-      ],
       days: [
         " ",
         "1",

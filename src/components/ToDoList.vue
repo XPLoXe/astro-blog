@@ -12,7 +12,14 @@
     </div>
 
     <ul>
-      <li v-for="(todo, index) in todos" :key="index">
+      <li
+        v-for="(todo, index) in todos"
+        :key="index"
+        :draggable="true"
+        @dragstart="handleDragStart(index)"
+        @dragover="handleDragOver"
+        @drop="handleDrop(index)"
+      >
         <div class="card">
           <span :class="{ completed: todo.completed }">
             <input
@@ -35,6 +42,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import Card from "../components/Card.astro";
 
 onMounted(() => {
   console.log("mounted");
@@ -81,6 +89,23 @@ function fetchToDoLocally() {
     //todos.value.push({ text: localToDo.text, completed: localToDo.completed });
   }
 }
+
+let draggedIndex;
+
+function handleDragStart(index) {
+  draggedIndex = index;
+}
+
+function handleDragOver(event) {
+  event.preventDefault();
+}
+
+function handleDrop(targetIndex) {
+  const draggedItem = todos.value[draggedIndex];
+  todos.value.splice(draggedIndex, 1);
+  todos.value.splice(targetIndex, 0, draggedItem);
+  saveToDoLocally();
+}
 </script>
 
 <style scoped>
@@ -94,6 +119,7 @@ function fetchToDoLocally() {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  cursor: move;
 }
 
 .dark {
