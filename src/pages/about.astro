@@ -9,7 +9,7 @@ import Showcase from "../components/Showcase.astro";
 <Layout title="About Astro">
   <Showcase heading="About" />
   <section class="page-content">
-    <div class="container">
+    <div class="container" style="text-justify: auto; text-align: center">
       <h2>About This Blog</h2>
       <p>
         On a day like any other, you veer from life’s culturally-designated path
@@ -26,20 +26,22 @@ import Showcase from "../components/Showcase.astro";
         while playing life itself.
       </p>
 
-      <Card dark={true}>
-        <div class="card">
-          <h3>Use the tools you already love</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ipsum
-            deserunt inventore ut voluptate, officia maiores repellat tenetur
-            praesentium omnis est ex tempora a necessitatibus reiciendis at et
-            dignissimos. Ipsam eius consequuntur cupiditate aperiam porro, esse
-            laborum impedit nesciunt ut voluptatum assumenda aspernatur libero
-            iusto error molestias dolorum, necessitatibus labore?
-          </p>
+      <div style="width: 100%; display: flex; justify-content: center;">
+        <div
+          style="width: 75%; height: 0; padding-bottom: 66%; position: relative;"
+        >
+          <iframe
+            src="https://giphy.com/embed/VHTUhqI82ZgPK?rid=no_related"
+            width="75%"
+            height="75%"
+            style="position: absolute; left: 0; right: 0; margin: auto;"
+            frameborder="0"
+            class="giphy-embed"></iframe>
         </div>
-      </Card>
+      </div>
+    </div>
 
+    <div style="width: 100%; display: flex; justify-content: center;">
       <img class="logos" src={logos} alt="" />
       <img class="logos-small" src={logosSmall} alt="" />
     </div>
