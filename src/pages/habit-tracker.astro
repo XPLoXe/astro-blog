@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Showcase from "../components/Showcase.astro";
-import HabitTracker from "../components/HabitTracker.vue";
+import HabitTrackerApp from "../components/HabitTracker.vue";
 ---
 
 <Layout title="Habit Tracker">
@@ -13,7 +13,7 @@ import HabitTracker from "../components/HabitTracker.vue";
   <section class="page-content">
     <div class="container">
       <Card>
-        <HabitTracker client:load />
+        <HabitTrackerApp client:load />
       </Card>
     </div>
   </section>

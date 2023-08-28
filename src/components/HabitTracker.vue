@@ -53,6 +53,7 @@ import CellApp from "./Cell.vue";
 import { onMounted } from "vue";
 
 export default {
+  name: "habit-tracker",
   components: {
     CellApp,
   },

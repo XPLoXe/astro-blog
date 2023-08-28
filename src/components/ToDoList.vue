@@ -10,7 +10,6 @@
       <button @click="addTodo">Add</button>
       <button @click="clearToDos">Clear All</button>
     </div>
-
     <ul>
       <li
         v-for="(todo, index) in todos"
@@ -20,6 +19,24 @@
         @dragover="handleDragOver"
         @drop="handleDrop(index)"
       >
+        <div
+          class="confetti"
+          style="
+            overflow: visible;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <ConfettiExplosion
+            v-if="isConfetti && confettiIndex === index"
+            :stageHeight="1000"
+            :particleCount="100"
+            :force="1"
+            :stageWidth="1500"
+            :duration="2500"
+          />
+        </div>
         <div class="card">
           <span :class="{ completed: todo.completed }">
             <input
@@ -41,14 +58,32 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, nextTick, onUnmounted, onBeforeUnmount } from "vue";
 import Card from "../components/Card.astro";
+import ConfettiExplosion from "vue-confetti-explosion";
 
+//LifeCycle\\
 onMounted(() => {
-  console.log("mounted");
   fetchToDoLocally();
 });
 
+onBeforeUnmount(() => {});
+
+onUnmounted(() => {});
+
+//confetti\\
+const isConfetti = ref(false);
+const confettiIndex = ref();
+const explodeConfetti = async (flag) => {
+  //console.log(todos.value[index].completed);
+  isConfetti.value = false;
+  if (flag) {
+    await nextTick();
+    isConfetti.value = true;
+  }
+};
+
+//To Do\\
 const newTodo = ref("");
 let todos = ref([]);
 
@@ -78,6 +113,8 @@ const removeTodo = (index) => {
 
 function completeToDo(index) {
   todos.value[index].completed = !todos.value[index].completed;
+  explodeConfetti(todos.value[index].completed);
+  confettiIndex.value = index;
   saveToDoLocally();
 }
 
