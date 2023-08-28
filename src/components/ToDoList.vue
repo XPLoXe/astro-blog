@@ -1,6 +1,24 @@
 <template>
   <div style="min-height: 37vh">
     <div style="text-align: center; margin-bottom: 5%">
+      <div
+        class="container"
+        style="
+          overflow: visible;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <ConfettiExplosion
+          v-if="isConfetti"
+          :stageHeight="550"
+          :particleCount="200"
+          :force="0.5"
+          :stageWidth="2000"
+        />
+      </div>
+
       <input
         type="text"
         v-model="newTodo"
@@ -10,7 +28,6 @@
       <button @click="addTodo">Add</button>
       <button @click="clearToDos">Clear All</button>
     </div>
-
     <ul>
       <li
         v-for="(todo, index) in todos"
@@ -41,14 +58,30 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, nextTick } from "vue";
 import Card from "../components/Card.astro";
+import ConfettiExplosion from "vue-confetti-explosion";
 
+//LifeCycle\\
 onMounted(() => {
   console.log("mounted");
   fetchToDoLocally();
 });
 
+//confetti\\
+const isConfetti = ref(false);
+const explodeConfetti = async (flag) => {
+  //console.log(todos.value[index].completed);
+  isConfetti.value = false;
+
+  if (flag) {
+    console.log("confetti should explode");
+    await nextTick();
+    isConfetti.value = true;
+  }
+};
+
+//To Do\\
 const newTodo = ref("");
 let todos = ref([]);
 
@@ -78,6 +111,7 @@ const removeTodo = (index) => {
 
 function completeToDo(index) {
   todos.value[index].completed = !todos.value[index].completed;
+  explodeConfetti(todos.value[index].completed);
   saveToDoLocally();
 }
 
