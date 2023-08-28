@@ -20,7 +20,7 @@
         @drop="handleDrop(index)"
       >
         <div
-          class="container"
+          class="confetti"
           style="
             overflow: visible;
             display: flex;
@@ -30,10 +30,11 @@
         >
           <ConfettiExplosion
             v-if="isConfetti && confettiIndex === index"
-            :stageHeight="600"
-            :particleCount="200"
+            :stageHeight="1000"
+            :particleCount="100"
             :force="1"
-            :stageWidth="2000"
+            :stageWidth="1500"
+            :duration="2500"
           />
         </div>
         <div class="card">
