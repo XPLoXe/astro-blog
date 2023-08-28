@@ -18,21 +18,6 @@ import Layout from "../layouts/Layout.astro";
   />
   <section class="page-content">
     <div class="container">
-      <!-- {
-        posts.map((post) => (
-          <Card>
-            <h3>{post.frontmatter.title}</h3>
-            <div>
-              Written by <strong> {post.frontmatter.author}</strong> on
-              {new Date(post.frontmatter.date).toLocaleDateString()}
-            </div>
-            <p>{post.frontmatter.excerpt}</p>
-            <a class="btn" href={`/${post.frontmatter.slug}`}>
-              Read More
-            </a>
-          </Card>
-        ))
-      } -->
       <ToDo client:load />
     </div>
   </section>
