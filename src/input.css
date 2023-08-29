@@ -13,7 +13,7 @@
     color: forestgreen;
     text-decoration-color: hotpink;
   }
-  a {
+  a:hover {
     @apply text-blue-600 underline;
   }
 }

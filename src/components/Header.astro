@@ -9,20 +9,19 @@ import logo from "../images/monkey-business.png";
   />
 
   <div class="container">
-    <div class="logo">
+    <div class="image-container">
       <a href="index.html">
+        <img src={logo} />
         <img
-          class="icon"
-          width="96"
-          height="96"
+          width="75"
+          height="75"
           src="https://img.icons8.com/nolan/96/year-of-monkey.png"
           alt="year-of-monkey"
         />
-        <img class="title" src={logo} />
       </a>
     </div>
 
-    <div class="dropdown">
+    <div class="dropdown" style="max-width: 700px; margin: 0 auto">
       <nav role="navigation" class="primary-navigation">
         <ul>
           <li><a href="/">Home</a></li>
@@ -62,6 +61,15 @@ import logo from "../images/monkey-business.png";
 </header>
 
 <style>
+  .image-container {
+    text-align: center; /* Optional: Center the images horizontally */
+  }
+
+  .image-container img {
+    display: inline-block;
+    margin-right: 10px; /* Add spacing between the images */
+  }
+
   nav.primary-navigation {
     margin: 0 auto;
     display: block;
@@ -177,6 +185,12 @@ import logo from "../images/monkey-business.png";
     background: var(--color-primary);
   }
 
+  @media (max-width: 931px) {
+    .header {
+      height: 175px;
+    }
+  }
+
   @media (max-width: 542px) {
     .header {
       height: 175px;
@@ -187,7 +201,7 @@ import logo from "../images/monkey-business.png";
   }
 
   @media (max-width: 541px) {
-    .header .container .logo .icon {
+    .header .container .logo {
       display: flex;
       justify-content: center;
     }
