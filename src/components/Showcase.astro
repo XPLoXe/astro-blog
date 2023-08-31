@@ -1,6 +1,7 @@
 ---
 import logos from "../images/new-logos.png";
 import logosSmall from "../images/new-logos-small.png";
+import { Image } from 'astro:assets';
 
 export interface Props {
   heading?: string;
@@ -38,14 +39,18 @@ const {
     showExtra && (
       <>
         <div class="showcase-img">
-          <img class="logos" src={logos} alt="" width="900" height="80" />
-          <img
-            class="logos-small"
+          <div class="image">
+            <Image class="image" id="logo" src={logos} alt="technologies flyer" width="900" height="80"/>
+            <Image
+            class="image"
+            id="logo-small"
             src={logosSmall}
-            alt=""
-            width="250px"
-            height="80px"
-          />
+            alt="technologies flyer small"
+            width="250"
+            height="80"
+          /> 
+          </div>
+          
         </div>
       </>
     )
@@ -98,7 +103,7 @@ const {
     text-align: center;
   }
 
-  .showcase-img img {
+  .showcase-img .image {
     border-radius: 10px;
     margin: auto;
   }
@@ -108,4 +113,13 @@ const {
     text-align: center;
     font-weight: 300;
   }
+
+  .logo-small {
+    display: 0
+  }
+
+  @media (max-width: 975){
+
+  }
+
 </style>

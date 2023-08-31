@@ -58,7 +58,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick, onUnmounted, onBeforeUnmount } from "vue";
+import {
+  ref,
+  onMounted,
+  nextTick,
+  onUnmounted,
+  onBeforeUnmount,
+  defineComponent,
+} from "vue";
 import Card from "../components/Card.astro";
 import ConfettiExplosion from "vue-confetti-explosion";
 
@@ -96,14 +103,14 @@ const addTodo = () => {
 };
 
 const clearToDos = () => {
-  localStorage.removeItem("todos");
+  localStorage?.removeItem("todos");
   todos.value = "";
   todos = ref([]);
 };
 
 const saveToDoLocally = () => {
   console.log("saved");
-  localStorage.setItem("todos", JSON.stringify(todos.value));
+  localStorage?.setItem("todos", JSON.stringify(todos.value));
 };
 
 const removeTodo = (index) => {
@@ -119,7 +126,7 @@ function completeToDo(index) {
 }
 
 function fetchToDoLocally() {
-  const localToDo = localStorage.getItem("todos");
+  const localToDo = localStorage?.getItem("todos");
   if (localToDo) {
     const localToDoItems = JSON.parse(localToDo);
     todos.value = localToDoItems;

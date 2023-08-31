@@ -3,7 +3,7 @@ import "../styles/global.css";
 import "../input.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-//import { ViewTransitions } from "astro:transitions";
+import { ViewTransitions } from "astro:transitions";
 
 export interface Props {
   title?: string;
@@ -53,6 +53,7 @@ const { title = "Monkey Business" } = Astro.props as Props;
     />
     <link href="/dist/output.css" rel="stylesheet" />
     <title>{title}</title>
+    <ViewTransitions/>
   </head>
   <body class="flex flex-col min-h-screen font-Roboto">
     <Header />

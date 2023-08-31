@@ -1,5 +1,6 @@
 ---
 import logo from "../images/monkey-business.png";
+import { Image } from 'astro:assets';
 ---
 
 <header class="header">
@@ -11,13 +12,13 @@ import logo from "../images/monkey-business.png";
   <div class="container">
     <div class="image-container">
       <a href="index.html">
-        <img src={logo} />
         <img
           width="75"
           height="75"
           src="https://img.icons8.com/nolan/96/year-of-monkey.png"
           alt="year-of-monkey"
         />
+        <Image class="title" alt="logo-title" src={logo} />
       </a>
     </div>
 

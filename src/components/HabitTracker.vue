@@ -125,11 +125,11 @@ export default {
     },
 
     saveHabitLocally() {
-      localStorage.setItem("habits", JSON.stringify(this.habits));
+      localStorage?.setItem("habits", JSON.stringify(this.habits));
       console.log("saved");
     },
     fetchHabitsLocally() {
-      const localHabit = localStorage.getItem("habits");
+      const localHabit = localStorage?.getItem("habits");
       if (localHabit) {
         const localHabitItems = JSON.parse(localHabit);
         this.habits = localHabitItems;
@@ -176,11 +176,11 @@ export default {
       }
     },
     removeAll() {
-      localStorage.removeItem("habits");
+      localStorage?.removeItem("habits");
       this.habits = [];
     },
   },
-  created() {
+  onMounted() {
     console.log("mounted");
 
     this.fetchHabitsLocally();
