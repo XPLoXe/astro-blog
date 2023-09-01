@@ -6,23 +6,23 @@
       v-model="newHabit"
       @keyup.enter="addHabit"
       placeholder="Add a Habit to track"
-      class="border-b-[0.2em] border-purple-600 p-2 rounded-t-md text-purple-600 focus:outline-none focus:bg-opacity-10 focus:bg-purple-600"
+      class="border-b-2 border-purple-600 bg-purple-100 bg-opacity-0 rounded-t p-2 text-purple-600 focus:outline-none focus:bg-opacity-100"
     />
     <button
       @click.prevent="addHabit"
-      class="border border-purple-600 py-2 px-4 rounded-full transition duration-500 hover:bg-purple-600 hover:text-white"
+      class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"
     >
       Add Habit
     </button>
     <button
       @click.prevent="clearAllConfirmation"
-      class="border border-purple-600 py-2 px-4 rounded-full transition duration-500 hover:bg-purple-600 hover:text-white"
+      class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"
     >
       Clear All Checkboxes
     </button>
     <button
       @click.prevent="removeAllConfirmation"
-      class="border border-purple-600 py-2 px-4 rounded-full transition duration-500 hover:bg-purple-600 hover:text-white"
+      class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"
     >
       Eliminate All Habits
     </button>

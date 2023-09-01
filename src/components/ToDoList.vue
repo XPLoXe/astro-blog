@@ -1,12 +1,13 @@
 <template>
   <div class="min-h-[37vh]">
+    <!--Input-->
     <div class="text-center mb-4">
       <input
         type="text"
         v-model="newTodo"
         @keyup.enter="addTodo"
         placeholder="Add a new todo"
-        class="border-b-2 border-purple-600 bg-purple-100 rounded-t p-2 text-purple-600"
+        class="border-b-2 border-purple-600 bg-purple-100 bg-opacity-0 rounded-t p-2 text-purple-600 focus:outline-none focus:bg-opacity-100"
       />
       <button
         @click="addTodo"
@@ -21,6 +22,8 @@
         Clear All
       </button>
     </div>
+
+    <!--To Do List-->
     <ul>
       <li
         v-for="(todo, index) in todos"
