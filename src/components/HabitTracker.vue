@@ -1,48 +1,76 @@
 <template>
-  <div style="text-align: center; margin-bottom: 5%" v-cloak>
+  <!-- INPUT -->
+  <div class="text-center mb-[5%]" v-cloak>
     <input
       type="text"
       v-model="newHabit"
       @keyup.enter="addHabit"
       placeholder="Add a Habit to track"
+      class="border-b-[0.2em] border-purple-600 p-2 rounded-t-md text-purple-600 focus:outline-none focus:bg-opacity-10 focus:bg-purple-600"
     />
-    <button @click.prevent="addHabit">Add Habit</button>
-    <button @click.prevent="clearAllConfirmation">Clear All Checkboxes</button>
-    <button @click.prevent="removeAllConfirmation">Eliminate All Habits</button>
+    <button
+      @click.prevent="addHabit"
+      class="border border-purple-600 py-2 px-4 rounded-full transition duration-500 hover:bg-purple-600 hover:text-white"
+    >
+      Add Habit
+    </button>
+    <button
+      @click.prevent="clearAllConfirmation"
+      class="border border-purple-600 py-2 px-4 rounded-full transition duration-500 hover:bg-purple-600 hover:text-white"
+    >
+      Clear All Checkboxes
+    </button>
+    <button
+      @click.prevent="removeAllConfirmation"
+      class="border border-purple-600 py-2 px-4 rounded-full transition duration-500 hover:bg-purple-600 hover:text-white"
+    >
+      Eliminate All Habits
+    </button>
   </div>
-  <div class="table-responsive" v-if="habits.length > 0">
-    <table>
-      <thead>
-        <td v-for="(day, colIndex) in days">
-          <b>{{ day }}</b>
-        </td>
+
+  <!-- SPREADSHEET -->
+  <div class="overflow-x-auto" v-if="habits.length > 0" style="max-width: 100%">
+    <table class="min-w-full divide-y divide-gray-200 whitespace-nowrap">
+      <thead class="bg-gray-50">
+        <tr>
+          <td
+            class="px-2 py-3 text-center text-xs font-medium text-gray-500 uppercase"
+            v-for="(day, colIndex) in days"
+            :key="colIndex"
+          >
+            <b>
+              {{ colIndex === 0 ? "Habit" : day }}
+            </b>
+          </td>
+        </tr>
       </thead>
-
-      <tr
-        v-for="(habit, rowIndex) in habits"
-        :key="rowIndex"
-        style="width: 100px"
-      >
-        <b>{{ habit.name }}</b>
-
-        <td v-for="(cell, colIndex) in days">
-          <CellApp
-            class="checkbox glow-element"
-            v-if="colIndex < 31"
-            :initialChecked="habit.check.includes(colIndex + 1)"
-            :rowIndex="rowIndex"
-            :colIndex="colIndex"
-            @update:checked="updateCell"
-          />
-          <div v-if="colIndex === 31" class="cursor-pointer">
-            <i
-              class="fa-solid fa-trash"
-              @click.prevent="removeConfirmation(rowIndex)"
-              style="color: #ff0000"
-            ></i>
-          </div>
-        </td>
-      </tr>
+      <tbody class="bg-white divide-y divide-gray-200">
+        <tr v-for="(habit, rowIndex) in habits" :key="rowIndex">
+          <td class="px-2 py-4">
+            <b>{{ habit.name }}</b>
+          </td>
+          <td
+            class="px-2 py-4"
+            v-for="(cell, colIndex) in days"
+            :key="colIndex"
+          >
+            <CellApp
+              class="checkbox glow-element"
+              v-if="colIndex < 31"
+              :initialChecked="habit.check.includes(colIndex + 1)"
+              :rowIndex="rowIndex"
+              :colIndex="colIndex"
+              @update:checked="updateCell"
+            />
+            <div v-if="colIndex === 31" class="cursor-pointer">
+              <i
+                class="fa-solid fa-trash text-red-500 hover:text-red-700"
+                @click.prevent="removeConfirmation(rowIndex)"
+              ></i>
+            </div>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </template>
@@ -196,97 +224,3 @@ const triggerConfetti = () => {
   });
 };
 </script>
-
-<style>
-[v-cloak] {
-  display: none;
-}
-
-.spreadsheet {
-  display: grid;
-}
-
-.completed {
-  text-decoration: line-through;
-}
-
-.card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
-
-.dark {
-  background: var(--color-primary);
-  color: white;
-}
-
-.body {
-  display: grid;
-  place-content: center;
-  height: 100vh;
-  margin: 0;
-  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-  overflow: hidden;
-  * {
-    outline: none;
-  }
-}
-
-input[type="text"] {
-  appearance: none;
-  border: none;
-  outline: none;
-  border-bottom: 0.2em solid #8a2be2;
-  background: rgba(#8a2be2, 0.2);
-  border-radius: 0.2em 0.2em 0 0;
-  padding: 0.4em;
-  color: #8a2be2;
-}
-
-button {
-  appearance: none;
-  border: 0.2em solid #8a2be2;
-  background: hsl(0 0 0/0);
-  padding: 0.85em 1.5em;
-  color: #8a2be2;
-  border-radius: 2em;
-  transition: 1s;
-  &:hover,
-  &:focus,
-  &:active {
-    background: #8a2be2;
-    color: #fff;
-  }
-}
-
-.text {
-  appearance: none;
-  border: none;
-  outline: none;
-  background: rgba(#8a2be2, 0.2);
-  border-radius: 0.2em 0.2em 0 0;
-  padding: 0.4em;
-  color: #8a2be2;
-}
-
-.table-responsive {
-  display: flex;
-  overflow-x: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  flex: 1; /* Distribute available space evenly among cells */
-  padding: 10px; /* Add padding for spacing */
-  border: 1px solid #ddd; /* Add borders for better visibility */
-  text-align: left; /* Adjust text alignment */
-}
-</style>

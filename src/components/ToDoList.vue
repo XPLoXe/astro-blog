@@ -10,13 +10,13 @@
       />
       <button
         @click="addTodo"
-        class="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white rounded-full py-2 px-4"
+        class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"
       >
         Add
       </button>
       <button
         @click="clearToDos"
-        class="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white rounded-full py-2 px-4"
+        class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"
       >
         Clear All
       </button>
@@ -36,7 +36,7 @@
         >
           <input
             type="checkbox"
-            class="m-0 w-[1em] h-[1em] border-[0.1em] border-purple-600 rounded-[0.1em] transform -translate-y-[0.075em] inline-block checked:bg-purple-600 checked:border-transparent"
+            class="cursor-pointer glow-element"
             @change="completeToDo(index)"
             :checked="todo.completed"
           />
@@ -51,7 +51,7 @@
           </span>
           <button
             @click="removeTodo(index)"
-            class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-1000 hover:bg-purple-600 hover:text-white"
+            class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"
           >
             Remove
             <i class="fa-solid fa-trash"></i>
@@ -140,7 +140,38 @@ const triggerConfetti = () => {
       x: 0.5,
       y: 0.5,
     },
-    ticks: 300,
   });
 };
 </script>
+
+<style>
+input[type="checkbox"] {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid #8a2be2;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: inline-block;
+  place-content: center;
+  &::before {
+    content: "";
+    display: grid;
+    width: 0.75em;
+    height: 0.75em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #8a2be2;
+    background-color: CanvasText;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform-origin: left top;
+  }
+  &:checked::before {
+    transform: scale(1);
+  }
+}
+</style>

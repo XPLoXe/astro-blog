@@ -38,20 +38,14 @@ const {
   {
     showExtra && (
       <>
-        <div class="showcase-img">
-          <div class="image">
-            <Image class="image" id="logo" src={logos} alt="technologies flyer" width="900" height="80"/>
-            <Image
-            class="image"
-            id="logo-small"
-            src={logosSmall}
-            alt="technologies flyer small"
-            width="250"
-            height="80"
-          /> 
-          </div>
-          
+      <div class="showcase-img">
+        <div class="image">
+          <!-- Show this image for large screens and hide for small -->
+          <Image class="image hidden lg:inline-block" id="logo" src={logos} alt="technologies flyer" width="900" height="80"/>
+          <!-- Show this image for small screens and hide for large -->
+          <Image class="image inline-block lg:hidden" id="logo-small" src={logosSmall} alt="technologies flyer small" width="250" height="80"/>
         </div>
+      </div>
       </>
     )
   }

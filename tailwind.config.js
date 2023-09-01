@@ -6,6 +6,8 @@ export default {
       colors: {
         "weather-primary": "#00668A",
         "weather-secondary": "#004E71",
+        primary: "#0f172a",
+        secondary: "#6b21a8",
       },
     },
     fontFamily: {
