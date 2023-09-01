@@ -34,157 +34,166 @@
             :colIndex="colIndex"
             @update:checked="updateCell"
           />
-          <img
-            v-if="colIndex === 31"
-            width="15"
-            height="15"
-            src="https://img.icons8.com/emoji/48/cross-mark-emoji.png"
-            alt="cross-mark-emoji"
-            @click.prevent="removeConfirmation(rowIndex)"
-          />
+          <div v-if="colIndex === 31" class="cursor-pointer">
+            <i
+              class="fa-solid fa-trash"
+              @click.prevent="removeConfirmation(rowIndex)"
+              style="color: #ff0000"
+            ></i>
+          </div>
         </td>
       </tr>
     </table>
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref, onMounted } from "vue";
 import CellApp from "./Cell.vue";
-import { onMounted } from "vue";
+import confetti from "canvas-confetti";
 
-export default {
-  name: "habit-tracker",
-  components: {
-    CellApp,
-  },
-  data() {
-    return {
-      newHabit: "",
-      habits: [],
-      days: [
-        " ",
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
-        "11",
-        "12",
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19",
-        "20",
-        "21",
-        "22",
-        "23",
-        "24",
-        "25",
-        "26",
-        "27",
-        "28",
-        "29",
-        "30",
-        "31",
-      ],
-    };
-  },
-  methods: {
-    updateCell(newCheckedValue, rowIndex, colIndex) {
-      if (newCheckedValue) {
-        this.habits[rowIndex].check.push(colIndex + 1);
-      } else {
-        const valueToRemove = colIndex + 1;
-        const indexToRemove =
-          this.habits[rowIndex].check.indexOf(valueToRemove);
+// Data
+const newHabit = ref("");
+const habits = ref([]);
+const days = ref([
+  " ",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "11",
+  "12",
+  "13",
+  "14",
+  "15",
+  "16",
+  "17",
+  "18",
+  "19",
+  "20",
+  "21",
+  "22",
+  "23",
+  "24",
+  "25",
+  "26",
+  "27",
+  "28",
+  "29",
+  "30",
+  "31",
+]);
 
-        if (indexToRemove !== -1) {
-          this.habits[rowIndex].check.splice(indexToRemove, 1);
-        }
-        // this.habits[rowIndex].check = this.habits[rowIndex].check.filter(
-        //   (number) => number !== colIndex + 1
-        // );
-      }
+// Methods
+const updateCell = (newCheckedValue, rowIndex, colIndex) => {
+  if (newCheckedValue) {
+    habits.value[rowIndex].check.push(colIndex + 1);
+    triggerConfetti();
+  } else {
+    const valueToRemove = colIndex + 1;
+    const indexToRemove = habits.value[rowIndex].check.indexOf(valueToRemove);
 
-      this.saveHabitLocally();
-    },
-    addHabit() {
-      if (this.newHabit.trim()) {
-        this.habits.push({ name: this.newHabit, check: [] });
-        this.newHabit = "";
-        this.saveHabitLocally();
-      }
-    },
+    if (indexToRemove !== -1) {
+      habits.value[rowIndex].check.splice(indexToRemove, 1);
+    }
+  }
 
-    saveHabitLocally() {
-      localStorage?.setItem("habits", JSON.stringify(this.habits));
-      console.log("saved");
-    },
-    fetchHabitsLocally() {
-      const localHabit = localStorage?.getItem("habits");
-      if (localHabit) {
-        const localHabitItems = JSON.parse(localHabit);
-        this.habits = localHabitItems;
-        console.log("habits loaded");
-      }
-    },
+  saveHabitLocally();
+};
 
-    removeConfirmation(index) {
-      const confirmed = window.confirm(
-        "Are you sure you want to eliminate this Habit?"
-      );
-      if (confirmed) {
-        this.removeHabit(index);
-      }
-    },
-    removeHabit(index) {
-      this.habits.splice(index, 1);
-      this.saveHabitLocally();
-    },
+const addHabit = () => {
+  if (newHabit.value.trim()) {
+    habits.value.push({ name: newHabit.value, check: [] });
+    newHabit.value = "";
+    saveHabitLocally();
+  }
+};
 
-    clearAllConfirmation() {
-      const confirmed = window.confirm(
-        "Are you sure you want to clear ALL of your habits marks?"
-      );
-      if (confirmed) {
-        this.clearHabits();
-      }
-    },
-    clearHabits() {
-      this.habits.forEach((habit) => {
-        habit.check = [];
-        console.log("loop");
-      });
-      this.saveHabitLocally();
-      location.reload();
-    },
+const saveHabitLocally = () => {
+  localStorage.setItem("habits", JSON.stringify(habits.value));
+  console.log("saved");
+};
 
-    removeAllConfirmation() {
-      const confirmed = window.confirm(
-        "Are you sure you want to ELIMINATE ALL of your habits?"
-      );
-      if (confirmed) {
-        this.removeAll();
-      }
-    },
-    removeAll() {
-      localStorage?.removeItem("habits");
-      this.habits = [];
-    },
-  },
-  onMounted() {
-    console.log("mounted");
+const fetchHabitsLocally = () => {
+  const localHabit = localStorage.getItem("habits");
+  if (localHabit) {
+    const localHabitItems = JSON.parse(localHabit);
+    habits.value = localHabitItems;
+    console.log("habits loaded");
+  }
+};
 
-    this.fetchHabitsLocally();
-  },
+const removeConfirmation = (index) => {
+  const confirmed = window.confirm(
+    "Are you sure you want to eliminate this Habit?"
+  );
+  if (confirmed) {
+    removeHabit(index);
+  }
+};
+
+const removeHabit = (index) => {
+  habits.value.splice(index, 1);
+  saveHabitLocally();
+};
+
+const clearAllConfirmation = () => {
+  const confirmed = window.confirm(
+    "Are you sure you want to clear ALL of your habits marks?"
+  );
+  if (confirmed) {
+    clearHabits();
+  }
+};
+
+const clearHabits = () => {
+  habits.value.forEach((habit) => {
+    habit.check = [];
+    console.log("loop");
+  });
+  saveHabitLocally();
+  location.reload();
+};
+
+const removeAllConfirmation = () => {
+  const confirmed = window.confirm(
+    "Are you sure you want to ELIMINATE ALL of your habits?"
+  );
+  if (confirmed) {
+    removeAll();
+  }
+};
+
+const removeAll = () => {
+  localStorage.removeItem("habits");
+  habits.value = [];
+};
+
+// Lifecycle Hook
+onMounted(() => {
+  console.log("mounted");
+  fetchHabitsLocally();
+});
+
+// CONFETTI \\
+//https://github.com/catdad/canvas-confetti
+const triggerConfetti = () => {
+  confetti({
+    particleCount: 200,
+    startVelocity: 50,
+    spread: 360,
+    origin: {
+      x: 0.5,
+      y: 0.5,
+    },
+    ticks: 300,
+  });
 };
 </script>
 
