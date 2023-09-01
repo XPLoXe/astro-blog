@@ -4,6 +4,7 @@ import Card from "../components/Card.astro";
 import logos from "../images/new-logos.png";
 import logosSmall from "../images/new-logos-small.png";
 import Showcase from "../components/Showcase.astro";
+import { Image } from 'astro:assets';
 ---
 
 <Layout title="About Astro">
@@ -41,10 +42,15 @@ import Showcase from "../components/Showcase.astro";
       </div>
     </div>
 
-    <div style="width: 100%; display: flex; justify-content: center;">
-      <img class="logos" src={logos} alt="" />
-      <img class="logos-small" src={logosSmall} alt="" />
+    <div class="flex flex-1 flex-col items-center">
+      <div class="image">
+        <!-- Show this image for large screens and hide for small -->
+        <Image class="image hidden lg:inline-block" id="logo" src={logos} alt="technologies flyer" width="900" height="80"/>
+        <!-- Show this image for small screens and hide for large -->
+        <Image class="image inline-block lg:hidden" id="logo-small" src={logosSmall} alt="technologies flyer small" width="250" height="80"/>
+      </div>
     </div>
+    
   </section>
 </Layout>
 
