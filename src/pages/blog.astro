@@ -9,7 +9,6 @@ import Layout from "../layouts/Layout.astro";
 //const posts = await response.json();
 
 const posts = await Astro.glob("../posts/*.md");
-export const prerender = true;
 ---
 
 <Layout title="Blog">
