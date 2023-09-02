@@ -1,0 +1,30 @@
+---
+import Showcase from "../components/Showcase.astro";
+import Layout from "../layouts/Layout.astro";
+
+---
+
+<Layout title="Blog">
+  <Showcase
+    heading="Weather App"
+    text="Originally developed as a standalone Vue.js project, this app has now been integrated into this blog, while adhering to its aesthetics."
+    repository="https://github.com/XPLoXe/weather-app"
+    showRepository={true}
+  />
+  <section class="page-content">
+    <div class="container">
+      <div id="weather-app"></div>
+    </div>
+  </section>
+</Layout>
+
+
+
+<script>
+    import { createApp } from 'vue';
+    import App from '../components/weather-app/App.vue';
+    import router from '../components/weather-app/router/index.js';
+  
+    createApp(App).use(router).mount('#weather-app');
+</script>
+
