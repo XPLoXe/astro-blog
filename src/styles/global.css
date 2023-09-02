@@ -42,12 +42,6 @@ h3 {
   line-height: 1.2;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 30px;
-}
-
 .btn {
   display: inline-block;
   padding: 0.5rem 1rem;
