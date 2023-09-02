@@ -1,6 +1,6 @@
 import * as adapter from '@astrojs/netlify/netlify-functions.js';
 import { renderers } from './renderers.mjs';
-import { manifest } from './manifest_8412cc17.mjs';
+import { manifest } from './manifest_e978f348.mjs';
 import 'vue';
 import 'vue/server-renderer';
 import 'cookie';
