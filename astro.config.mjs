@@ -9,6 +9,6 @@ import vue from "@astrojs/vue";
 export default defineConfig({
   integrations: [tailwind({ applyBaseStyles: false }), vue()],
   //integrations: [vue()],
-  output: "hybrid",
+  //output: "hybrid",
   //adapter: netlify(),
 });
