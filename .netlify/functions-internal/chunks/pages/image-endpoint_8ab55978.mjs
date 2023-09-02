@@ -1,12 +1,10 @@
 import { isRemotePath } from '@astrojs/internal-helpers/path';
 import mime from 'mime/lite.js';
-import { g as getConfiguredImageService, i as imageConfig, a as isRemoteAllowed } from './game_ef61b94c.mjs';
-import '../astro_91e07efc.mjs';
+import { g as getConfiguredImageService, i as imageConfig, c as isRemoteAllowed } from './_slug__73b7ba41.mjs';
+import '../astro_c89a7039.mjs';
 import 'clsx';
 import 'html-escaper';
-/* empty css                          */import 'vue/server-renderer';
-import 'vue';
-/* empty css                           *//* empty css                            */
+/* empty css                          *//* empty css                            *//* empty css                           */
 const fnv1a52 = (str) => {
   const len = str.length;
   let i = 0, t0 = 0, v0 = 8997, t1 = 0, v1 = 33826, t2 = 0, v2 = 40164, t3 = 0, v3 = 52210;

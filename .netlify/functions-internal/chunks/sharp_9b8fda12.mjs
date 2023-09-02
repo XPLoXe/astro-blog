@@ -1,11 +1,9 @@
-import { A as AstroError, i as MissingSharp } from './astro.5e812fb2.mjs';
-import { d as baseService, p as parseQuality } from './pages/game.astro.16f762b1.mjs';
+import { A as AstroError, i as MissingSharp } from './astro_c89a7039.mjs';
+import { d as baseService, p as parseQuality } from './pages/_slug__73b7ba41.mjs';
 import 'clsx';
 import 'html-escaper';
 import '@astrojs/internal-helpers/path';
-/* empty css                         */import 'vue/server-renderer';
-import 'vue';
-/* empty css                          *//* empty css                           */
+/* empty css                         *//* empty css                           *//* empty css                          */
 let sharp;
 const qualityTable = {
   low: 25,

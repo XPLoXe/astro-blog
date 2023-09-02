@@ -3,6 +3,6 @@ export { onRequest } from '../_empty-middleware.mjs';
 import 'vue';
 import 'vue/server-renderer';
 
-const page = () => import('./prerender_14f24968.mjs').then(n => n.t);
+const page = () => import('./pages/image-endpoint_8ab55978.mjs');
 
 export { page };

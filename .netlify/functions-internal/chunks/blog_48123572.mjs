@@ -3,6 +3,6 @@ export { onRequest } from '../_empty-middleware.mjs';
 import 'vue';
 import 'vue/server-renderer';
 
-const page = () => import('./prerender_14f24968.mjs').then(n => n.i);
+const page = () => import('./pages/blog_cf2a755d.mjs');
 
 export { page };

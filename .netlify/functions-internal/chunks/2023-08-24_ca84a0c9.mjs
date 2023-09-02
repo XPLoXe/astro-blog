@@ -1,11 +1,9 @@
-import { b as createComponent, s as spreadAttributes, r as renderTemplate, u as unescapeHTML } from './astro_91e07efc.mjs';
+import { b as createComponent, s as spreadAttributes, r as renderTemplate, u as unescapeHTML } from './astro_c89a7039.mjs';
 import '@astrojs/internal-helpers/path';
-import './pages/game_ef61b94c.mjs';
+import './pages/_slug__73b7ba41.mjs';
 import 'clsx';
 import 'html-escaper';
-/* empty css                         */import 'vue/server-renderer';
-import 'vue';
-/* empty css                          *//* empty css                           */
+/* empty css                         *//* empty css                           *//* empty css                          */
 const images = {
 					
 				};
