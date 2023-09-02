@@ -22,10 +22,12 @@ const { Content, frontmatter } = Astro.props.post;
     <div class="container">
       <Card>
         <a class="btn" href="/blog">Go Back</a>
-        <h2>{frontmatter.title}</h2>
+        <h2 class="py-6 text-4xl text-center">{frontmatter.title}</h2>
         <div>
-          Written by <strong> {frontmatter.author}</strong> on
-          {new Date(frontmatter.date).toLocaleDateString()}
+          <i>
+            Written by <strong>  {frontmatter.author}  </strong> on
+            {new Date(frontmatter.date).toLocaleDateString()} 
+          </i>
         </div>
         <!-- {
         posts.map((post) => (
@@ -42,7 +44,10 @@ const { Content, frontmatter } = Astro.props.post;
           </Card>
         ))
       } -->
-        <Content />
+        <div class="py-6">
+          <Content/>
+        </div>
+        
         <a class="btn" href="/blog">Go Back</a>
       </Card>
     </div>
