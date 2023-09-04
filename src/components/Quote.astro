@@ -1,0 +1,15 @@
+---
+import quotes from "../assets/quotes.json";
+
+const randomIndex = Math.floor(Math.random() * quotes.length);
+const quote = quotes[randomIndex];
+---
+
+<div class="flex flex-row flex-auto py-4 text-lg">
+  <i class="fa-solid fa-quote-left fa-sm flex-auto"></i>
+  <p class="text-center">{quote.content}</p>
+  <i class="fa-solid fa-quote-right fa-sm flex-auto"></i>
+</div>
+<div>
+  <i class="text-xs">{quote.author}</i>
+</div>

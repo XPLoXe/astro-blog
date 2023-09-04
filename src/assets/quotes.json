@@ -1,0 +1,502 @@
+[
+  {
+    "_id": "Z5HhvrGNn3_Y",
+    "content": "There is nothing happens to any person but what was in his power to go through with.",
+    "author": "Marcus Aurelius",
+    "tags": ["Famous Quotes"],
+    "authorSlug": "marcus-aurelius",
+    "length": 84,
+    "dateAdded": "2020-03-01",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "6flgSy1aFc",
+    "content": "It is not a lack of love, but a lack of friendship that makes unhappy marriages.",
+    "author": "Friedrich Nietzsche",
+    "tags": ["Friendship"],
+    "authorSlug": "friedrich-nietzsche",
+    "length": 80,
+    "dateAdded": "2019-02-21",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "k1TVeBO_5Kh",
+    "author": "Laurence J. Peter",
+    "content": "An economist is an expert who will know tomorrow why the things he predicted yesterday didn't happen today.",
+    "tags": ["Business"],
+    "authorSlug": "laurence-j-peter",
+    "length": 107,
+    "dateAdded": "2022-07-06",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "a7lEejDkHdFL",
+    "content": "Everything you are against weakens you. Everything you are for empowers you.",
+    "author": "Wayne Dyer",
+    "tags": ["Wisdom", "Power Quotes"],
+    "authorSlug": "wayne-dyer",
+    "length": 76,
+    "dateAdded": "2019-02-11",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "yW0uii1d-O",
+    "author": "Woody Allen",
+    "content": "Interestingly, according to modern astronomers, space is finite. This is a very comforting thought-- particularly for people who can never remember where they have left things.",
+    "tags": ["Film"],
+    "authorSlug": "woody-allen",
+    "length": 176,
+    "dateAdded": "2019-03-17",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "hsiQm0VG4T",
+    "content": "Friendship is also about liking a person for their failings, their weakness. It's also about mutual help, not about exploitation.",
+    "author": "Paul Theroux",
+    "tags": ["Friendship"],
+    "authorSlug": "paul-theroux",
+    "length": 129,
+    "dateAdded": "2019-08-08",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "X3Sw_D3xm_I0",
+    "content": "Don't turn away from possible futures before you're certain you don't have anything to learn from them.",
+    "author": "Richard Bach",
+    "tags": ["Famous Quotes", "Future"],
+    "authorSlug": "richard-bach",
+    "length": 103,
+    "dateAdded": "2019-07-03",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "Sj_MF0e3EN",
+    "content": "I have friends in overalls whose friendship I would not swap for the favor of the kings of the world.",
+    "author": "Thomas Edison",
+    "tags": ["Friendship"],
+    "authorSlug": "thomas-edison",
+    "length": 101,
+    "dateAdded": "2019-12-13",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "0GYhGCy1iGJq",
+    "content": "Do not give your attention to what others do or fail to do; give it to what you do or fail to do.",
+    "author": "Dhammapada",
+    "tags": ["Wisdom"],
+    "authorSlug": "dhammapada",
+    "length": 97,
+    "dateAdded": "2019-02-11",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "M_3sjCS_e7k2",
+    "content": "Life is a gift, and it offers us the privilege, opportunity, and responsibility to give something back by becoming more",
+    "author": "Tony Robbins",
+    "tags": ["Famous Quotes"],
+    "authorSlug": "tony-robbins",
+    "length": 119,
+    "dateAdded": "2019-03-24",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "XNoqbWJGYN",
+    "content": "Once you label me you negate me.",
+    "author": "Søren Kierkegaard",
+    "tags": ["Wisdom"],
+    "authorSlug": "soren-kierkegaard",
+    "length": 32,
+    "dateAdded": "2020-10-14",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "0mvbtxiIrRtQ",
+    "content": "When I let go of what I am, I become what I might be.",
+    "author": "Laozi",
+    "tags": ["Wisdom"],
+    "authorSlug": "laozi",
+    "length": 53,
+    "dateAdded": "2021-01-19",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "WuHLOLFI2uKy",
+    "content": "To be aware of a single shortcoming in oneself is more useful than to be aware of a thousand in someone else.",
+    "author": "Dalai Lama",
+    "tags": ["Famous Quotes"],
+    "authorSlug": "dalai-lama",
+    "length": 109,
+    "dateAdded": "2021-01-20",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "TLfamqFncI8p",
+    "content": "There are no failures. Just experiences and your reactions to them.",
+    "author": "Tom Krause",
+    "tags": ["Famous Quotes"],
+    "authorSlug": "tom-krause",
+    "length": 67,
+    "dateAdded": "2020-01-12",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "f6cFa9XP2YD",
+    "content": "One of the advantages of being disorderly is that one is constantly making exciting discoveries.",
+    "author": "A. A. Milne",
+    "tags": ["Famous Quotes", "Life"],
+    "authorSlug": "a-a-milne",
+    "length": 96,
+    "dateAdded": "2021-03-26",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "aawMV6-S9",
+    "content": "The friendship that can cease has never been real.",
+    "author": "Jerome",
+    "tags": ["Friendship"],
+    "authorSlug": "jerome",
+    "length": 50,
+    "dateAdded": "2021-04-23",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "A5l8yCGO4BL5",
+    "content": "Forgiveness is choosing to love. It is the first skill of self-giving love.",
+    "author": "Mahatma Gandhi",
+    "tags": ["Wisdom"],
+    "authorSlug": "mahatma-gandhi",
+    "length": 75,
+    "dateAdded": "2019-12-13",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "77ZqNwl8aoR4",
+    "content": "There are two kinds of failures: those who thought and never did, and those who did and never thought.",
+    "author": "Laurence J. Peter",
+    "tags": ["Famous Quotes"],
+    "authorSlug": "laurence-j-peter",
+    "length": 102,
+    "dateAdded": "2019-03-15",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "_tPHsxO_pOK2",
+    "content": "Take rest; a field that has rested gives a bountiful crop.",
+    "author": "Ovid",
+    "tags": ["Famous Quotes"],
+    "authorSlug": "ovid",
+    "length": 58,
+    "dateAdded": "2019-09-08",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "bkL1a4IExc",
+    "content": "Motivation is the art of getting people to do what you want them to do because they want to do it.",
+    "author": "Dwight D. Eisenhower",
+    "tags": ["Inspirational"],
+    "authorSlug": "dwight-d-eisenhower",
+    "length": 98,
+    "dateAdded": "2020-02-07",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "6S4ONaVMZU",
+    "author": "Aesop",
+    "content": "Be content with your lot; one cannot be first in everything.",
+    "tags": ["Wisdom"],
+    "authorSlug": "aesop",
+    "length": 60,
+    "dateAdded": "2023-04-03",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "I6-sDc_nC",
+    "content": "Do the one thing you think you cannot do. Fail at it. Try again. Do better the second time. The only people who never tumble are those who never mount the high wire. This is your moment. Own it.",
+    "author": "Oprah Winfrey",
+    "tags": ["Inspirational"],
+    "authorSlug": "oprah-winfrey",
+    "length": 194,
+    "dateAdded": "2020-01-26",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "fC5Jr2NsYm",
+    "author": "Albert Einstein",
+    "content": "Gravitation cannot be held responsible for people falling in love. How on earth can you explain in terms of chemistry and physics so important a biological phenomenon as first love? Put your hand on a stove for a minute and it seems like an hour. Sit with that special girl for an hour and it seems like a minute. That's relativity.",
+    "tags": ["Love", "Science"],
+    "authorSlug": "albert-einstein",
+    "length": 332,
+    "dateAdded": "2023-04-06",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "EbwcJxDo-wVb",
+    "content": "I am a man of fixed and unbending principles, the first of which is to be flexible at all times.",
+    "author": "Everett Dirksen",
+    "tags": ["Famous Quotes"],
+    "authorSlug": "everett-dirksen",
+    "length": 96,
+    "dateAdded": "2020-04-14",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "heFGlWwPZjvX",
+    "content": "Promises are the uniquely human way of ordering the future, making it predictable and reliable to the extent that this is humanly possible.",
+    "author": "Hannah Arendt",
+    "tags": ["Future"],
+    "authorSlug": "hannah-arendt",
+    "length": 139,
+    "dateAdded": "2021-01-30",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "9pQeVJgxcsKT",
+    "content": "I am always doing that which I cannot do, in order that I may learn how to do it.",
+    "author": "Pablo Picasso",
+    "tags": ["Famous Quotes"],
+    "authorSlug": "pablo-picasso",
+    "length": 81,
+    "dateAdded": "2019-12-13",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "8pxScew8Z6Fg",
+    "content": "Nothing great was ever achieved without enthusiasm.",
+    "author": "Ralph Waldo Emerson",
+    "tags": ["Famous Quotes", "Success"],
+    "authorSlug": "ralph-waldo-emerson",
+    "length": 51,
+    "dateAdded": "2019-01-08",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "_6z2BhrSP8hw",
+    "content": "Do not be too timid and squeamish about your reactions. All life is an experiment. The more experiments you make the better.",
+    "author": "Ralph Waldo Emerson",
+    "tags": ["Famous Quotes"],
+    "authorSlug": "ralph-waldo-emerson",
+    "length": 124,
+    "dateAdded": "2019-03-15",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "l4SIHYrQpX",
+    "author": "Johann Wolfgang von Goethe",
+    "content": "Knowing is not enough; we must apply. Willing is not enough; we must do.",
+    "tags": ["Motivational"],
+    "authorSlug": "johann-wolfgang-von-goethe",
+    "length": 72,
+    "dateAdded": "2022-07-06",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "LpBt1VcHO",
+    "content": "Love is flower like; Friendship is like a sheltering tree.",
+    "author": "Samuel Taylor Coleridge",
+    "tags": ["Friendship"],
+    "authorSlug": "samuel-taylor-coleridge",
+    "length": 58,
+    "dateAdded": "2020-02-27",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "iqob_h7AuhiT",
+    "content": "Only through our connectedness to others can we really know and enhance the self. And only through working on the self can we begin to enhance our connectedness to others.",
+    "author": "Harriet Lerner",
+    "tags": ["Famous Quotes"],
+    "authorSlug": "harriet-lerner",
+    "length": 171,
+    "dateAdded": "2020-01-26",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "nFekPJy-f7",
+    "content": "Many sophisticated, intelligent people lack wisdom and common sense.",
+    "author": "Joyce Meyer",
+    "tags": ["Wisdom"],
+    "authorSlug": "joyce-meyer",
+    "length": 68,
+    "dateAdded": "2019-01-08",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "C3knCn6X0qO",
+    "content": "Never put off till tomorrow what you can do today.",
+    "author": "Thomas Jefferson",
+    "tags": ["Famous Quotes"],
+    "authorSlug": "thomas-jefferson",
+    "length": 50,
+    "dateAdded": "2021-01-11",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "EwEzvlN_Ijpi",
+    "content": "Change your thoughts and you change your world.",
+    "author": "Norman Vincent Peale",
+    "tags": ["Change", "Wisdom"],
+    "authorSlug": "norman-vincent-peale",
+    "length": 47,
+    "dateAdded": "2019-06-13",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "upj50_hSUD20",
+    "content": "Numberless are the worlds wonders, but none more wonderful than man.",
+    "author": "Sophocles",
+    "tags": ["Famous Quotes"],
+    "authorSlug": "sophocles",
+    "length": 68,
+    "dateAdded": "2019-06-27",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "yP11lreUJUGB",
+    "content": "By letting it go it all gets done. The world is won by those who let it go. But when you try and try. The world is beyond the winning.",
+    "author": "Laozi",
+    "tags": ["Wisdom"],
+    "authorSlug": "laozi",
+    "length": 134,
+    "dateAdded": "2019-06-27",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "ZIPQXFULbx0",
+    "content": "The truth is not for all men, but only for those who seek it.",
+    "author": "Ayn Rand",
+    "tags": ["Wisdom"],
+    "authorSlug": "ayn-rand",
+    "length": 61,
+    "dateAdded": "2021-03-26",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "a_UVavIxwkA0",
+    "content": "Judge nothing, you will be happy. Forgive everything, you will be happier. Love everything, you will be happiest.",
+    "author": "Sri Chinmoy",
+    "tags": ["Famous Quotes"],
+    "authorSlug": "sri-chinmoy",
+    "length": 113,
+    "dateAdded": "2020-01-26",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "ELHOG8O36T4p",
+    "content": "Mistakes are always forgivable, if one has the courage to admit them.",
+    "author": "Bruce Lee",
+    "tags": ["Famous Quotes"],
+    "authorSlug": "bruce-lee",
+    "length": 69,
+    "dateAdded": "2019-09-23",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "L0Qr5x-lLcc",
+    "content": "Anticipate the difficult by managing the easy.",
+    "author": "Laozi",
+    "tags": ["Wisdom"],
+    "authorSlug": "laozi",
+    "length": 46,
+    "dateAdded": "2020-09-29",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "39c_g75LzbEV",
+    "content": "A leader is one who knows the way, goes the way, and shows the way.",
+    "author": "John C. Maxwell",
+    "tags": ["Famous Quotes"],
+    "authorSlug": "john-c-maxwell",
+    "length": 67,
+    "dateAdded": "2020-11-13",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "smbfaOldHD",
+    "author": "The Buddha",
+    "content": "A disciplined mind brings happiness.",
+    "tags": ["Wisdom", "Happiness"],
+    "authorSlug": "the-buddha",
+    "length": 36,
+    "dateAdded": "2023-03-30",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "GbjRau4Ef2cZ",
+    "content": "When you meet someone better than yourself, turn your thoughts to becoming his equal. When you meet someone not as good as you are, look within and examine your own self.",
+    "author": "Confucius",
+    "tags": ["Wisdom"],
+    "authorSlug": "confucius",
+    "length": 170,
+    "dateAdded": "2020-03-11",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "51iIZed76Z",
+    "content": "Talent is God-given; be humble. Fame is man-given; be thankful. Conceit is self-given; be careful.",
+    "author": "Harvey Mackay",
+    "tags": ["Wisdom"],
+    "authorSlug": "harvey-mackay",
+    "length": 98,
+    "dateAdded": "2019-01-08",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "WSpdlKZYCP",
+    "content": "Technology… the knack of so arranging the world that we don't have to experience it.",
+    "author": "Max Frisch",
+    "tags": ["Technology"],
+    "authorSlug": "max-frisch",
+    "length": 84,
+    "dateAdded": "2019-06-13",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "WJ5c36Guag1",
+    "content": "I will give you a definition of a proud man: he is a man who has neither vanity nor wisdom one filled with hatreds cannot be vain, neither can he be wise.",
+    "author": "John Keats",
+    "tags": ["Wisdom"],
+    "authorSlug": "john-keats",
+    "length": 154,
+    "dateAdded": "2020-01-31",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "2gO92SUDmhSk",
+    "content": "Work for something because it is good, not just because it stands a chance to succeed.",
+    "author": "Václav Havel",
+    "tags": ["Famous Quotes"],
+    "authorSlug": "vaclav-havel",
+    "length": 86,
+    "dateAdded": "2019-10-03",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "TPsLPsnjVANf",
+    "content": "The best cure for the body is a quiet mind.",
+    "author": "Napoleon",
+    "tags": ["Famous Quotes"],
+    "authorSlug": "napoleon",
+    "length": 43,
+    "dateAdded": "2020-04-15",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "J2YAEeD2ky",
+    "author": "Winston Churchill",
+    "content": "It is no use saying, 'We are doing our best.' You have got to succeed in doing what is necessary.",
+    "tags": ["Inspirational", "Success"],
+    "authorSlug": "winston-churchill",
+    "length": 97,
+    "dateAdded": "2022-03-12",
+    "dateModified": "2023-04-14"
+  },
+  {
+    "_id": "ytCMTCxPfR",
+    "content": "It is not so much our friends' help that helps us, as the confidence of their help.",
+    "author": "Epicurus",
+    "tags": ["Friendship"],
+    "authorSlug": "epicurus",
+    "length": 83,
+    "dateAdded": "2020-02-22",
+    "dateModified": "2023-04-14"
+  }
+]

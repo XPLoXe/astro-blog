@@ -2,7 +2,7 @@
 import logos from "../images/new-logos.png";
 import logosSmall from "../images/new-logos-small.png";
 import { Image } from 'astro:assets';
-import Quote from "../components/Quote.vue"
+import Quote from "../components/Quote.astro"
 
 export interface Props {
   heading?: string;
@@ -35,7 +35,7 @@ const {
       {
         showQuote && (
           
-          <Quote client:load ></Quote> 
+          <Quote></Quote> 
           
         )
       }
