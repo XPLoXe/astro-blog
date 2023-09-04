@@ -2,6 +2,7 @@
 import logos from "../images/new-logos.png";
 import logosSmall from "../images/new-logos-small.png";
 import { Image } from 'astro:assets';
+import Quote from "../components/Quote.vue"
 
 export interface Props {
   heading?: string;
@@ -9,6 +10,8 @@ export interface Props {
   showExtra?: boolean;
   showRepository?: boolean;
   repository?: string;
+  showQuote?: boolean;
+  quote?: string;
 }
 
 const {
@@ -17,14 +20,30 @@ const {
   showExtra = false,
   showRepository = false,
   repository = "",
+  showQuote = false,
 } = Astro.props as Props;
+
+
+
+  
 ---
 
 <section class="showcase">
-  <div class="showcase-text">
+  <div class="showcase-text text-center items-center">
     <h1>{heading}</h1>
-    <p>
-      {text}
+    
+      {
+        showQuote && (
+          
+          <Quote client:load ></Quote> 
+          
+        )
+      }
+    
+    
+    
+    <p class="mt-12">
+      {text} 
     </p>
     {
       showRepository && (
@@ -52,6 +71,10 @@ const {
     )
   }
 </section>
+
+<script>
+  
+</script>
 
 <style>
   a {
