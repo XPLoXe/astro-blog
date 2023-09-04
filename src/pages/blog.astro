@@ -15,21 +15,27 @@ export const prerender = true;
   <section class="page-content">
     <div class="container">
       {
-        posts.map((post) => (
-          <Card>
-            <h3>{post.frontmatter.title}</h3>
-            <div>
-              Written by <strong> {post.frontmatter.author}</strong> on
-              {new Date(post.frontmatter.date).toLocaleDateString()}
-            </div>
-            <br>
-            <p>{post.frontmatter.excerpt}</p>
-            <br>
-            <a class="btn" href={`/${post.frontmatter.slug}`}>
-              Read More
-            </a>
-          </Card>
-        ))
+        posts
+          .sort(
+            (a, b) =>
+              new Date(String(b.frontmatter.date)) -
+              new Date(String(a.frontmatter.date)),
+          )
+          .map((post) => (
+            <Card>
+              <h3>{post.frontmatter.title}</h3>
+              <div>
+                Written by <strong> {post.frontmatter.author}</strong> on
+                {new Date(post.frontmatter.date).toLocaleDateString()}
+              </div>
+              <br />
+              <p>{post.frontmatter.excerpt}</p>
+              <br />
+              <a class="btn" href={`/${post.frontmatter.slug}`}>
+                Read More
+              </a>
+            </Card>
+          ))
       }
     </div>
   </section>
