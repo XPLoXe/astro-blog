@@ -24,12 +24,4 @@ const router = createRouter({
   ],
 });
 
-//targe the route before re enter
-// router.beforeEach((to, from, next) => {
-//   document.title = `${
-//     to.params.state ? `${to.params.city}, ${to.params.state}` : to.meta.title
-//   } | The Local Weather`;
-//   next();
-// });
-
 export default router;

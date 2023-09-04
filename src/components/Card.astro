@@ -1,16 +1,9 @@
 ---
-// export interface Props {
-//   title: string;
-//   body: string;
-//   dark?: boolean;
-// }
-
 export interface Props {
   dark?: boolean;
   text?: string;
 }
 
-//const { title, body, dark = false } = Astro.props as Props;
 const { dark = false, text = "" } = Astro.props as Props;
 ---
 
