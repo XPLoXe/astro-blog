@@ -2,7 +2,6 @@
 import ToDo from "../components/ToDoList.vue";
 import Showcase from "../components/Showcase.astro";
 import Layout from "../layouts/Layout.astro";
-
 ---
 
 <Layout title="Blog">
@@ -10,9 +9,42 @@ import Layout from "../layouts/Layout.astro";
     heading="To Do List"
     text="Simply by crossing a 'to-do' off a list, your brain releases endorphins to keep you motivated throughout the day. Simple, yet powerful."
   />
+
   <section class="page-content">
-    <div class="container">
-      <ToDo client:load/>
+    <div class="flex justify-between">
+      <div class="">
+        <a href="/habit-tracker">
+          <button
+            type="button"
+            class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"
+          >
+            <i class="fa-solid fa-arrow-left"></i>
+            <span class="mr-2"> Prev</span>
+          </button>
+        </a>
+      </div>
+
+      <div
+        class="flex-grow"
+        transition:name="to-do-list"
+        transition:animate="slide"
+      >
+        <div class="container">
+          <ToDo client:load />
+        </div>
+      </div>
+
+      <div class="">
+        <a href="/habit-tracker">
+          <button
+            type="button"
+            class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"
+          >
+            <span class="mr-2">Next</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </a>
+      </div>
     </div>
   </section>
 </Layout>

@@ -17,26 +17,32 @@ export async function getStaticPaths() {
 const { Content, frontmatter } = Astro.props.post;
 
 export const prerender = true;
-
 ---
 
 <Layout title={frontmatter.title}>
   <section class="page-content">
     <div class="container">
       <Card>
-        <a class="btn" href="/blog">Go Back</a>
-        <h2 class="py-6 text-4xl text-center">{frontmatter.title}</h2>
-        <div>
+        <div transition:name={`post-button-${frontmatter.slug}`}>
+          <a class="btn" href="/blog">Go Back</a>
+        </div>
+
+        <div transition:name={`post-header-${frontmatter.slug}`}>
+          <h2 class="py-6 text-4xl text-center">
+            {frontmatter.title}
+          </h2>
+        </div>
+
+        <div transition:name={`post-author-${frontmatter.slug}`}>
           <i>
-            Written by <strong>  {frontmatter.author}  </strong> on
-            {new Date(frontmatter.date).toLocaleDateString()} 
+            Written by <strong> {frontmatter.author}</strong> on
+            {new Date(frontmatter.date).toLocaleDateString()}
           </i>
         </div>
-        <div class="py-6">
-          <Content/>
+
+        <div class="py-6" transition:name={`post-body-${frontmatter.slug}`}>
+          <Content />
         </div>
-        
-        <a class="btn" href="/blog">Go Back</a>
       </Card>
     </div>
   </section>

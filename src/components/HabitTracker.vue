@@ -159,7 +159,7 @@ const fetchHabitsLocally = () => {
 
 const removeConfirmation = (index) => {
   const confirmed = window.confirm(
-    "Are you sure you want to eliminate this Habit?"
+    "Are you sure you want to eliminate this Habit?",
   );
   if (confirmed) {
     removeHabit(index);
@@ -173,7 +173,7 @@ const removeHabit = (index) => {
 
 const clearAllConfirmation = () => {
   const confirmed = window.confirm(
-    "Are you sure you want to clear ALL of your habits marks?"
+    "Are you sure you want to clear ALL of your habits marks?",
   );
   if (confirmed) {
     clearHabits();
@@ -191,7 +191,7 @@ const clearHabits = () => {
 
 const removeAllConfirmation = () => {
   const confirmed = window.confirm(
-    "Are you sure you want to ELIMINATE ALL of your habits?"
+    "Are you sure you want to ELIMINATE ALL of your habits?",
   );
   if (confirmed) {
     removeAll();
@@ -211,8 +211,13 @@ onMounted(() => {
 
 // CONFETTI \\
 //https://github.com/catdad/canvas-confetti
+const canvas = null;
 const triggerConfetti = () => {
-  confetti({
+  const myConfetti = confetti.create(canvas, {
+    resize: true,
+    useWorker: true,
+  });
+  myConfetti({
     particleCount: 200,
     startVelocity: 50,
     spread: 360,
@@ -220,7 +225,6 @@ const triggerConfetti = () => {
       x: 0.5,
       y: 0.5,
     },
-    ticks: 300,
   });
 };
 </script>

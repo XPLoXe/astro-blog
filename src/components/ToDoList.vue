@@ -23,7 +23,7 @@
       </button>
     </div>
 
-    <!--To Do List-->
+    <!-- To Do List -->
     <ul>
       <li
         v-for="(todo, index) in todos"
@@ -35,30 +35,34 @@
         @drop="handleDrop(index)"
       >
         <div
-          class="bg-white p-5 rounded-lg shadow-md mb-5 cursor-move flex justify-between items-center"
+          class="bg-white p-5 rounded-lg shadow-md mb-5 cursor-move flex flex-col sm:flex-row justify-between items-center"
         >
-          <input
-            type="checkbox"
-            class="cursor-pointer glow-element"
-            @change="completeToDo(index)"
-            :checked="todo.completed"
-          />
-          <span
-            :class="{
-              'line-through': todo.completed,
-              'text-center': true,
-              'flex-grow': true,
-            }"
-          >
-            {{ todo.text }}
-          </span>
-          <button
-            @click="removeTodo(index)"
-            class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"
-          >
-            Remove
-            <i class="fa-solid fa-trash"></i>
-          </button>
+          <div class="mb-3 sm:mb-0">
+            <input
+              type="checkbox"
+              class="cursor-pointer glow-element"
+              @change="completeToDo(index)"
+              :checked="todo.completed"
+            />
+          </div>
+          <div class="mb-3 sm:mb-0 flex-grow text-center">
+            <span
+              :class="{
+                'line-through': todo.completed,
+              }"
+            >
+              {{ todo.text }}
+            </span>
+          </div>
+          <div class="">
+            <button
+              @click="removeTodo(index)"
+              class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"
+            >
+              Remove
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
         </div>
       </li>
     </ul>
@@ -80,7 +84,7 @@ const todos = ref([]);
 
 const addTodo = () => {
   if (newTodo.value.trim()) {
-    todos.value.push({ text: newTodo.value, completed: false });
+    todos.value.unshift({ text: newTodo.value, completed: false });
     newTodo.value = "";
     saveToDoLocally();
   }
@@ -134,8 +138,13 @@ const handleDrop = (targetIndex) => {
 
 // CONFETTI \\
 //https://github.com/catdad/canvas-confetti
+const canvas = null;
 const triggerConfetti = () => {
-  confetti({
+  const myConfetti = confetti.create(canvas, {
+    resize: true,
+    useWorker: true,
+  });
+  myConfetti({
     particleCount: 200,
     startVelocity: 50,
     spread: 360,

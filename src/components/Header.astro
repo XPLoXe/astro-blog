@@ -1,6 +1,6 @@
 ---
 import logo from "../images/monkey-business.png";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 ---
 
 <header class="header">
@@ -46,19 +46,30 @@ import { Image } from 'astro:assets';
           <li>
             <a href="#">Tools &dtrif;</a>
             <ul class="dropdown">
-              <li><a href="/to-do-list">To Do List</a></li>
               <li>
-                <a href="/habit-tracker">Habit Tracker</a>
+                <a
+                  href="/to-do-list"
+                  transition:name="to-do-list"
+                  transition:animate="slide">To Do List</a
+                >
               </li>
               <li>
-                <a href="/weather-app">Weather App</a>
+                <a
+                  href="/habit-tracker"
+                  transition:name="habit-tracker"
+                  transition:animate="slide">Habit Tracker</a
+                >
               </li>
-              
+              <li>
+                <a href="/weather-app" target="_parent">Weather App</a>
+              </li>
             </ul>
           </li>
 
           <li><a href="/about">About</a></li>
-          <li><a href="/blog">Blog</a></li>
+          <li>
+            <a href="/blog">Blog</a>
+          </li>
         </ul>
       </nav>
     </div>
