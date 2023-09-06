@@ -134,8 +134,13 @@ const handleDrop = (targetIndex) => {
 
 // CONFETTI \\
 //https://github.com/catdad/canvas-confetti
+const canvas = null;
 const triggerConfetti = () => {
-  confetti({
+  const myConfetti = confetti.create(canvas, {
+    resize: true,
+    useWorker: true,
+  });
+  myConfetti({
     particleCount: 200,
     startVelocity: 50,
     spread: 360,
