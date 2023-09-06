@@ -13,30 +13,41 @@ export const prerender = true;
     text="A few posts explaining interesting stuff"
   />
   <section class="page-content">
-    <div class="container">
-      {
-        posts
-          .sort(
-            (a, b) =>
-              new Date(String(b.frontmatter.date)) -
-              new Date(String(a.frontmatter.date)),
-          )
-          .map((post) => (
-            <Card>
-              <h3>{post.frontmatter.title}</h3>
-              <div>
-                Written by <strong> {post.frontmatter.author}</strong> on
-                {new Date(post.frontmatter.date).toLocaleDateString()}
-              </div>
-              <br />
-              <p>{post.frontmatter.excerpt}</p>
-              <br />
-              <a class="btn" href={`/${post.frontmatter.slug}`}>
-                Read More
-              </a>
-            </Card>
-          ))
-      }
+    <div>
+      <div class="container">
+        {
+          posts
+            .sort(
+              (a, b) =>
+                new Date(String(b.frontmatter.date)) -
+                new Date(String(a.frontmatter.date)),
+            )
+            .map((post) => (
+              <Card>
+                <div transition:name={`post-header-${post.frontmatter.slug}`}>
+                  <h3>{post.frontmatter.title}</h3>
+                </div>
+
+                <div transition:name={`post-author-${post.frontmatter.slug}`}>
+                  Written by <strong> {post.frontmatter.author}</strong> on
+                  {new Date(post.frontmatter.date).toLocaleDateString()}
+                </div>
+                <br />
+
+                <div transition:name={`post-body-${post.frontmatter.slug}`}>
+                  <p>{post.frontmatter.excerpt}</p>
+                </div>
+
+                <br />
+                <div transition:name={`post-button-${post.frontmatter.slug}`}>
+                  <a class="btn" href={`/${post.frontmatter.slug}`}>
+                    Read More
+                  </a>
+                </div>
+              </Card>
+            ))
+        }
+      </div>
     </div>
   </section>
 </Layout>
