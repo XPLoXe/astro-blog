@@ -11,12 +11,40 @@ import Layout from "../layouts/Layout.astro";
   />
 
   <section class="page-content">
-    <div
-      class="container"
-      transition:name="to-do-list"
-      transition:animate="slide"
-    >
-      <ToDo client:load />
+    <div class="flex justify-between">
+      <div class="">
+        <a href="/to-do-list">
+          <button
+            type="button"
+            class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"
+          >
+            <i class="fa-solid fa-arrow-left"></i>
+            <span class="mr-2"> Prev</span>
+          </button>
+        </a>
+      </div>
+
+      <div
+        class="flex-grow"
+        transition:name="to-do-list"
+        transition:animate="slide"
+      >
+        <div class="container">
+          <ToDo client:load />
+        </div>
+      </div>
+
+      <div class="">
+        <a href="/habit-tracker">
+          <button
+            type="button"
+            class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"
+          >
+            <span class="mr-2">Next</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </a>
+      </div>
     </div>
   </section>
 </Layout>
