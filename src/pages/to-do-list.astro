@@ -9,8 +9,13 @@ import Layout from "../layouts/Layout.astro";
     heading="To Do List"
     text="Simply by crossing a 'to-do' off a list, your brain releases endorphins to keep you motivated throughout the day. Simple, yet powerful."
   />
+
   <section class="page-content">
-    <div class="container">
+    <div
+      class="container"
+      transition:name="to-do-list"
+      transition:animate="slide"
+    >
       <ToDo client:load />
     </div>
   </section>

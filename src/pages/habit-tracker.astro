@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Showcase from "../components/Showcase.astro";
 import HabitTrackerApp from "../components/HabitTracker.vue";
-
 ---
 
 <Layout title="Habit Tracker">
@@ -12,7 +11,11 @@ import HabitTrackerApp from "../components/HabitTracker.vue";
     text="Here's a simple yet powerful tool I learned from James Clear's book 'Atomic Habits.' It involves marking the habits you want to integrate into your daily life and keeping track of them. We often forget to follow through with tasks, and this tool serves as a friendly and encouraging reminder."
   />
   <section class="page-content">
-    <div class="container">
+    <div
+      class="container"
+      transition:name="habit-tracker"
+      transition:animate="slide"
+    >
       <Card>
         <HabitTrackerApp client:load />
       </Card>
