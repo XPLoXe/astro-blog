@@ -3,6 +3,7 @@ import ToDo from "../components/ToDoList.vue";
 import Showcase from "../components/Showcase.astro";
 import Layout from "../layouts/Layout.astro";
 import { fade, slide } from "astro:transitions";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Blog" transition:name="to-do-list">
@@ -31,7 +32,9 @@ import { fade, slide } from "astro:transitions";
         transition:animate={slide({ duration: "1s" })}
       >
         <div class="container">
-          <ToDo client:load />
+          <Card>
+            <ToDo client:load />
+          </Card>
         </div>
       </div>
 
