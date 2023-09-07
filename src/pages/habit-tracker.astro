@@ -12,9 +12,9 @@ import { fade, slide } from "astro:transitions";
     text="Here's a simple yet powerful tool I learned from James Clear's book 'Atomic Habits.' It involves marking the habits you want to integrate into your daily life and keeping track of them. We often forget to follow through with tasks, and this tool serves as a friendly and encouraging reminder."
   />
 
-  <section class="page-content">
-    <div class="flex justify-between">
-      <div class="">
+  <section>
+    <div class="flex flex-col sm:flex-row justify-between">
+      <div class="mb-2 sm:mb-0 py-4 text-center sm:text-left">
         <a href="/to-do-list">
           <button
             type="button"
@@ -31,14 +31,16 @@ import { fade, slide } from "astro:transitions";
         transition:name="tool"
         transition:animate={slide({ duration: "1s" })}
       >
-        <div class="container">
+        <div
+          class="w-full px-8 mx-auto sm:max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-5xl"
+        >
           <Card>
             <HabitTrackerApp client:load />
           </Card>
         </div>
       </div>
 
-      <div class="">
+      <div class="mt-2 sm:mt-0 py-4 text-center sm:text-right">
         <a href="/to-do-list">
           <button
             type="button"
