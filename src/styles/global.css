@@ -60,20 +60,20 @@ h3 {
 
 /* Page Content */
 .page-content {
-  margin: 20px 0;
+  margin: 20px 0; /* This can be replaced with my-5 or my-6 in Tailwind */
 }
 
 .page-content h2,
 .page-content h3 {
-  margin: 20px 0;
+  margin: 20px 0; /* This can be replaced with my-5 or my-6 in Tailwind */
 }
 
 .page-content h2 {
-  font-size: 40px;
+  font-size: 40px; /* This can be replaced with text-4xl in Tailwind */
 }
 
 .page-content h3 {
-  font-size: 25px;
+  font-size: 25px; /* This can be replaced with text-xl in Tailwind */
 }
 
 .glow-element {
