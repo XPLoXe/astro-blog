@@ -1,4 +1,5 @@
 ---
+import { fade, slide } from "astro:transitions";
 import logo from "../images/monkey-business.png";
 import { Image } from "astro:assets";
 ---
@@ -50,14 +51,15 @@ import { Image } from "astro:assets";
                 <a
                   href="/to-do-list"
                   transition:name="to-do-list"
-                  transition:animate="slide">To Do List</a
+                  transition:animate={slide({ duration: "1s" })}>To Do List</a
                 >
               </li>
               <li>
                 <a
                   href="/habit-tracker"
                   transition:name="habit-tracker"
-                  transition:animate="slide">Habit Tracker</a
+                  transition:animate={slide({ duration: "1s" })}
+                  >Habit Tracker</a
                 >
               </li>
               <li>

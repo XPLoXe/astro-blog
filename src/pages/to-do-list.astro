@@ -2,9 +2,11 @@
 import ToDo from "../components/ToDoList.vue";
 import Showcase from "../components/Showcase.astro";
 import Layout from "../layouts/Layout.astro";
+import { fade, slide } from "astro:transitions";
+import Card from "../components/Card.astro";
 ---
 
-<Layout title="Blog">
+<Layout title="Blog" transition:name="to-do-list">
   <Showcase
     heading="To Do List"
     text="Simply by crossing a 'to-do' off a list, your brain releases endorphins to keep you motivated throughout the day. Simple, yet powerful."
@@ -26,11 +28,13 @@ import Layout from "../layouts/Layout.astro";
 
       <div
         class="flex-grow"
-        transition:name="to-do-list"
-        transition:animate="slide"
+        transition:name="tool"
+        transition:animate={slide({ duration: "1s" })}
       >
         <div class="container">
-          <ToDo client:load />
+          <Card>
+            <ToDo client:load />
+          </Card>
         </div>
       </div>
 

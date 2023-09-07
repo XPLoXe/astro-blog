@@ -24,10 +24,11 @@
     </div>
 
     <!-- To Do List -->
-    <ul>
+
+    <transition-group name="list" tag="ul">
       <li
         v-for="(todo, index) in todos"
-        :key="index"
+        :key="todo.id"
         class="drag-item"
         :draggable="true"
         @dragstart="handleDragStart(index)"
@@ -65,13 +66,14 @@
           </div>
         </div>
       </li>
-    </ul>
+    </transition-group>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted, nextTick } from "vue";
 import confetti from "canvas-confetti";
+import { uid } from "uid";
 
 onMounted(() => {
   console.log("Component mounted");
@@ -84,7 +86,7 @@ const todos = ref([]);
 
 const addTodo = () => {
   if (newTodo.value.trim()) {
-    todos.value.unshift({ text: newTodo.value, completed: false });
+    todos.value.unshift({ text: newTodo.value, completed: false, id: uid() });
     newTodo.value = "";
     saveToDoLocally();
   }
@@ -157,6 +159,22 @@ const triggerConfetti = () => {
 </script>
 
 <style>
+.list-enter-active,
+.list-leave-active {
+  transition: all 1s;
+}
+.list-enter {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+.list-leave-to /* .list-leave-active in <2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.list-move {
+  transition: transform 1s;
+}
+
 input[type="checkbox"] {
   appearance: none;
   background-color: #fff;
