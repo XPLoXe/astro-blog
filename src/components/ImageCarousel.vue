@@ -23,11 +23,11 @@
 <script>
 import { defineComponent } from "vue";
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
-import { image1 } from "../images/about-pic1.jpg";
-import { image2 } from "../images/about-pic2.jpg";
-import { image3 } from "../images/about-pic3.jpg";
-import { image4 } from "../images/about-pic4.jpg";
-import { image5 } from "../images/about-pic5.jpg";
+import image1 from "../images/about-pic1.jpg";
+import image2 from "../images/about-pic2.jpg";
+import image3 from "../images/about-pic3.jpg";
+import image4 from "../images/about-pic4.jpg";
+import image5 from "../images/about-pic5.jpg";
 
 import "vue3-carousel/dist/carousel.css";
 
