@@ -12,6 +12,7 @@ export interface Props {
   repository?: string;
   showQuote?: boolean;
   quote?: string;
+  isAbout?: boolean;
 }
 
 const {
@@ -21,6 +22,7 @@ const {
   showRepository = false,
   repository = "",
   showQuote = false,
+  isAbout = false,
 } = Astro.props as Props;
 
 
@@ -45,6 +47,7 @@ const {
     <p class="mt-12">
       {text} 
     </p>
+
     {
       showRepository && (
         <i class="fa-brands fa-github"></i>

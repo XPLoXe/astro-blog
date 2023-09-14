@@ -4,31 +4,19 @@ import Card from "../components/Card.astro";
 import logos from "../images/new-logos.png";
 import logosSmall from "../images/new-logos-small.png";
 import Showcase from "../components/Showcase.astro";
+import ImageCarousel from "../components/ImageCarousel.vue";
 import { Image } from "astro:assets";
-export const prerender = true;
+export const prerender = false;
+
+const text =
+  "On a day like any other, you veer from life’s culturally-designated path and realize that a world of opportunities lies just ahead. It may sound like a passage from a children’s book meant to inspire courage, but in reality, this realization is one of the most unsettling you will ever experience. In this humble blog, you will find the tools from which I have crafted the ark I use to navigate through the sea of life. It may not be a lot, but it will grow alongside my web developer skills and my experiences while playing life itself.";
 ---
 
 <Layout title="About Astro">
-  <Showcase heading="About" />
+  <Showcase heading="Alejandro Bocchicchio's Blog" isAbout={true} text={text} />
   <section class="page-content">
     <div class="container" style="text-justify: auto; text-align: center">
-      <Card>
-        <h2>About This Blog</h2>
-        <p>
-          On a day like any other, you veer from life’s culturally-designated
-          path and realize that a world of opportunities lies just ahead. It may
-          sound like a passage from a children’s book meant to inspire courage,
-          but in reality, this realization is one of the most unsettling you
-          will ever experience.
-        </p>
-
-        <p>
-          In this humble blog, you will find the tools from which I have crafted
-          the ark I use to navigate through the sea of life. It may not be a
-          lot, but it will grow alongside my web developer skills and my
-          experiences while playing life itself.
-        </p>
-      </Card>
+      <Card><ImageCarousel client:load /></Card>
 
       <div style="width: 100%; display: flex; justify-content: center;">
         <div
