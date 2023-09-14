@@ -16,9 +16,7 @@ const text =
   <Showcase heading="Alejandro Bocchicchio's Blog" isAbout={true} text={text} />
   <section class="page-content">
     <div class="container" style="text-justify: auto; text-align: center">
-      <Card>
-        <ImageCarousel client:visible />
-      </Card>
+      <Card><ImageCarousel client:load /></Card>
 
       <div style="width: 100%; display: flex; justify-content: center;">
         <div
