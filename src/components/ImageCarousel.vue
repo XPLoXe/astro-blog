@@ -23,6 +23,11 @@
 <script>
 import { defineComponent } from "vue";
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
+import { image1 } from "../images/about-pic1.jpg";
+import { image2 } from "../images/about-pic2.jpg";
+import { image3 } from "../images/about-pic3.jpg";
+import { image4 } from "../images/about-pic4.jpg";
+import { image5 } from "../images/about-pic5.jpg";
 
 import "vue3-carousel/dist/carousel.css";
 
@@ -36,33 +41,63 @@ export default defineComponent({
   },
   data() {
     return {
+      //array of imported images from "../images folder"
+
       images: [
         {
-          src: "../src/images/about-pic1.jpg",
+          src: image1,
           alt: "Slide image 1",
           description: "Alejandro Bocchicchio Mesa",
         },
         {
-          src: "../src/images/about-pic2.jpg",
+          src: image2,
           alt: "Slide image 2",
           description: "Bariloche, Argentina",
         },
         {
-          src: "../src/images/about-pic3.jpg",
+          src: image3,
           alt: "Slide image 3",
           description: "Highlands Bowl, Aspen, Colorado",
         },
         {
-          src: "../src/images/about-pic4.jpg",
+          src: image4,
           alt: "Slide image 4",
           description: "Mar del Plata, Argentina",
         },
         {
-          src: "../src/images/about-pic5.jpg",
+          src: image5,
           alt: "Slide image 5",
           description: "Barcelona, Spain",
         },
       ],
+
+      // images: [
+      //   {
+      //     src: "../src/images/about-pic1.jpg",
+      //     alt: "Slide image 1",
+      //     description: "Alejandro Bocchicchio Mesa",
+      //   },
+      //   {
+      //     src: "../src/images/about-pic2.jpg",
+      //     alt: "Slide image 2",
+      //     description: "Bariloche, Argentina",
+      //   },
+      //   {
+      //     src: "../src/images/about-pic3.jpg",
+      //     alt: "Slide image 3",
+      //     description: "Highlands Bowl, Aspen, Colorado",
+      //   },
+      //   {
+      //     src: "../src/images/about-pic4.jpg",
+      //     alt: "Slide image 4",
+      //     description: "Mar del Plata, Argentina",
+      //   },
+      //   {
+      //     src: "../src/images/about-pic5.jpg",
+      //     alt: "Slide image 5",
+      //     description: "Barcelona, Spain",
+      //   },
+      // ],
     };
   },
 });
