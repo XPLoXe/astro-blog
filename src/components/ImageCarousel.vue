@@ -45,27 +45,27 @@ export default defineComponent({
 
       images: [
         {
-          src: image1,
+          src: image1.src,
           alt: "Slide image 1",
           description: "Alejandro Bocchicchio Mesa",
         },
         {
-          src: image2,
+          src: image2.src,
           alt: "Slide image 2",
           description: "Bariloche, Argentina",
         },
         {
-          src: image3,
+          src: image3.src,
           alt: "Slide image 3",
           description: "Highlands Bowl, Aspen, Colorado",
         },
         {
-          src: image4,
+          src: image4.src,
           alt: "Slide image 4",
           description: "Mar del Plata, Argentina",
         },
         {
-          src: image5,
+          src: image5.src,
           alt: "Slide image 5",
           description: "Barcelona, Spain",
         },
