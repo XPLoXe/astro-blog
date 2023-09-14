@@ -38,27 +38,27 @@ export default defineComponent({
     return {
       images: [
         {
-          src: "../public/about-pic1.jpg",
+          src: "../src/images/about-pic1.jpg",
           alt: "Slide image 1",
           description: "Alejandro Bocchicchio Mesa",
         },
         {
-          src: "../public/about-pic2.jpg",
+          src: "../src/images/about-pic2.jpg",
           alt: "Slide image 2",
           description: "Bariloche, Argentina",
         },
         {
-          src: "../public/about-pic3.jpg",
+          src: "../src/images/about-pic3.jpg",
           alt: "Slide image 3",
           description: "Highlands Bowl, Aspen, Colorado",
         },
         {
-          src: "../public/about-pic4.jpg",
+          src: "../src/images/about-pic4.jpg",
           alt: "Slide image 4",
           description: "Mar del Plata, Argentina",
         },
         {
-          src: "../public/about-pic5.jpg",
+          src: "../src/images/about-pic5.jpg",
           alt: "Slide image 5",
           description: "Barcelona, Spain",
         },
