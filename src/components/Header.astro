@@ -4,12 +4,13 @@ import logo from "../images/monkey-business.png";
 import { Image } from "astro:assets";
 ---
 
-<header class="header">
+<header class="header max-[537px]:h-56 max-[931px]:h-44 h-25 bg-primary">
   <link
     href="https://fonts.googleapis.com/css?family=Arvo&display=swap"
     rel="stylesheet"
   />
 
+  <!-- Logos -->
   <div class="container">
     <div class="image-container">
       <a href="index.html">
@@ -23,13 +24,16 @@ import { Image } from "astro:assets";
       </a>
     </div>
 
-    <div class="dropdown" style="max-width: 700px; margin: 0 auto">
+    <!--Navigation -->
+    <div
+      class="dropdown mx-auto max-w-[700px] items-center content-start min-w-[351px]"
+    >
       <nav role="navigation" class="primary-navigation">
         <ul>
           <li><a href="/">Home</a></li>
           <li>
             <a href="#">Games &dtrif;</a>
-            <ul class="dropdown">
+            <ul class="dropdown z-10">
               <li>
                 <a
                   href="/game?search=https://64e50a20839a9019d51bb911--delicate-belekoy-4e9031.netlify.app/"
@@ -46,7 +50,7 @@ import { Image } from "astro:assets";
           </li>
           <li>
             <a href="#">Tools &dtrif;</a>
-            <ul class="dropdown">
+            <ul class="dropdown z-10">
               <li>
                 <a
                   href="/to-do-list"
@@ -90,7 +94,7 @@ import { Image } from "astro:assets";
 
   nav.primary-navigation {
     margin: 0 auto;
-    display: block;
+    display: flex;
     text-align: center;
     font-size: 16px;
     margin-right: 0px;
@@ -179,7 +183,6 @@ import { Image } from "astro:assets";
   }
 
   .header .container {
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -198,21 +201,7 @@ import { Image } from "astro:assets";
     }
   }
 
-  .header {
-    height: 100px;
-    background: var(--color-primary);
-  }
-
-  @media (max-width: 931px) {
-    .header {
-      height: 175px;
-    }
-  }
-
   @media (max-width: 542px) {
-    .header {
-      height: 175px;
-    }
     .icon {
       margin: auto;
     }
