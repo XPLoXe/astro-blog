@@ -1,0 +1,170 @@
+---
+import YouTubeVideos from "./YouTubeVideos.vue";
+import axios from "axios";
+
+const API_KEY = import.meta.env.SECRET_PASSWORD_YOUTUBE;
+const CHANNEL_ID = import.meta.env.PUBLIC_YOUTUBE_CHANNEL;
+const URL = `https://www.googleapis.com/youtube/v3/channels?part=snippet,contentDetails,statistics&id=${CHANNEL_ID}&key=${API_KEY}`;
+
+//let videos = [];
+
+async function getYouTubeChannel() {
+  try {
+    const response = await axios.get(URL);
+    const channel = response.data.items[0];
+    console.log(channel);
+    return channel;
+  } catch (error) {
+    console.error(
+      "Error fetching YouTube data:",
+      error.response ? error.response.data : error.message,
+    );
+    return {};
+  }
+}
+
+async function getYouTubeVideos() {
+  try {
+    // Step 1: Get the "uploads" playlist ID of the channel
+    const channelResponse = await getYouTubeChannel();
+    const uploadsPlaylistId =
+      channelResponse.contentDetails.relatedPlaylists.uploads;
+
+    // Step 2: Get the videos using the "uploads" playlist ID
+    const videosResponse = await axios.get(
+      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=4&playlistId=${uploadsPlaylistId}&key=${API_KEY}`,
+    );
+    const videos = videosResponse.data.items;
+
+    console.log(videos.length);
+    return videos;
+  } catch (error) {
+    console.error(
+      "Error fetching YouTube data:",
+      error.response ? error.response.data : error.message,
+    );
+    return [];
+  }
+}
+
+const channelInfo = await getYouTubeChannel();
+//example\\
+// {
+//   "kind": "youtube#channelListResponse",
+//   "etag": "HakHY7KFYWAeH161anp8E_7cxsg",
+//   "pageInfo": {
+//     "totalResults": 1,
+//     "resultsPerPage": 5
+//   },
+//   "items": [
+//     {
+//       "kind": "youtube#channel",
+//       "etag": "aP1ygRh19YSh4FTT1Hl2sUVeXVM",
+//       "id": "UCTlsYs4MWFD6b1yGoReg1cQ",
+//       "snippet": {
+//         "title": "XPLoXe",
+//         "description": "",
+//         "customUrl": "@xploxe",
+//         "publishedAt": "2011-06-19T21:57:56Z",
+//         "thumbnails": {
+//           "default": {
+//             "url": "https://yt3.ggpht.com/ytc/AOPolaRMhu-WY7t8edlqha7DyupQfFUVnQF9dFj3AtZ81w=s88-c-k-c0x00ffffff-no-rj",
+//             "width": 88,
+//             "height": 88
+//           },
+//           "medium": {
+//             "url": "https://yt3.ggpht.com/ytc/AOPolaRMhu-WY7t8edlqha7DyupQfFUVnQF9dFj3AtZ81w=s240-c-k-c0x00ffffff-no-rj",
+//             "width": 240,
+//             "height": 240
+//           },
+//           "high": {
+//             "url": "https://yt3.ggpht.com/ytc/AOPolaRMhu-WY7t8edlqha7DyupQfFUVnQF9dFj3AtZ81w=s800-c-k-c0x00ffffff-no-rj",
+//             "width": 800,
+//             "height": 800
+//           }
+//         },
+//         "localized": {
+//           "title": "XPLoXe",
+//           "description": ""
+//         }
+//       },
+//       "contentDetails": {
+//         "relatedPlaylists": {
+//           "likes": "",
+//           "uploads": "UUTlsYs4MWFD6b1yGoReg1cQ"
+//         }
+//       },
+//       "statistics": {
+//         "viewCount": "67168",
+//         "subscriberCount": "106",
+//         "hiddenSubscriberCount": false,
+//         "videoCount": "43"
+//       }
+//     }
+//   ]
+// }
+
+const videos = await getYouTubeVideos();
+//example\\
+// {
+//     "kind": "youtube#playlistItem",
+//     "etag": "JKCI14GRolYWe83qO8UbZSgTY_o",
+//     "id": "VVVUbHNZczRNV0ZENmIxeUdvUmVnMWNRLnlHY1VYQm1EbzdJ",
+//     "snippet": {
+//     "publishedAt": "2022-11-30T22:55:07Z",
+//     "channelId": "UCTlsYs4MWFD6b1yGoReg1cQ",
+//     "title": "Balls of Steel v0.7.2",
+//     "description": "",
+//     "thumbnails":
+//         {
+//            "default": {
+//            "url": "https://i.ytimg.com/vi/yGcUXBmDo7I/default.jpg",
+//            "width": 120,
+//            "height": 90
+//            },
+//            "medium": {
+//            "url": "https://i.ytimg.com/vi/yGcUXBmDo7I/mqdefault.jpg",
+//            "width": 320,
+//            "height": 180
+//            },
+//            "high": {
+//            "url": "https://i.ytimg.com/vi/yGcUXBmDo7I/hqdefault.jpg",
+//            "width": 480,
+//            "height": 360
+//            },
+//            "standard": {
+//            "url": "https://i.ytimg.com/vi/yGcUXBmDo7I/sddefault.jpg",
+//            "width": 640,
+//            "height": 480
+//            },
+//            "maxres": {
+//            "url": "https://i.ytimg.com/vi/yGcUXBmDo7I/maxresdefault.jpg",
+//            "width": 1280,
+//            "height": 720
+//         }
+//     },
+//     "channelTitle": "XPLoXe",
+//     "playlistId": "UUTlsYs4MWFD6b1yGoReg1cQ",
+//     "position": 0,
+//     "resourceId": {
+//         "kind": "youtube#video",
+//         "videoId": "yGcUXBmDo7I"
+//     },
+//     "videoOwnerChannelTitle": "XPLoXe",
+//     "videoOwnerChannelId": "UCTlsYs4MWFD6b1yGoReg1cQ"
+//     },
+//     "contentDetails": {
+//     "videoId": "yGcUXBmDo7I",
+//     "videoPublishedAt": "2022-11-30T22:55:07Z"
+//     }
+// }
+---
+
+<div>
+  <!-- display channelInfo properties here using talwindCSS -->
+  <h1 class="text-4xl font-bold text-center text-primary">
+    {channelInfo.snippet.title}
+  </h1>
+
+  <YouTubeVideos videos={videos} channelInfo={channelInfo} client:load />
+</div>
