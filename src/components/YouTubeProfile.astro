@@ -23,6 +23,22 @@ async function getYouTubeChannel() {
   }
 }
 
+async function getYouTubeVideoDuration(videoId) {
+  try {
+    const response = await axios.get(
+      `https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=${videoId}&key=${API_KEY}`,
+    );
+    const video = response.data.items[0];
+    console.log(video);
+    return video;
+  } catch (error) {
+    console.error(
+      "Error fetching YouTube data:",
+      error.response ? error.response.data : error.message,
+    );
+    return {};
+  }
+}
 async function getYouTubeVideos() {
   try {
     // Step 1: Get the "uploads" playlist ID of the channel
@@ -35,7 +51,12 @@ async function getYouTubeVideos() {
       `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=20&playlistId=${uploadsPlaylistId}&key=${API_KEY}`,
     );
     const videos = videosResponse.data.items;
-
+    //call the getYouTubeVideoDuration function to get the duration of each video using the videos array, iterate through the array and get the videoId of each video and pass it to the getYouTubeVideoDuration function
+    for (let i = 0; i < videos.length; i++) {
+      const videoId = videos[i].contentDetails.videoId;
+      const videoDuration = await getYouTubeVideoDuration(videoId);
+      videos[i].contentDetails.duration = videoDuration.contentDetails.duration;
+    }
     console.log(videos.length);
     return videos;
   } catch (error) {
