@@ -32,7 +32,7 @@ async function getYouTubeVideos() {
 
     // Step 2: Get the videos using the "uploads" playlist ID
     const videosResponse = await axios.get(
-      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=4&playlistId=${uploadsPlaylistId}&key=${API_KEY}`,
+      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=20&playlistId=${uploadsPlaylistId}&key=${API_KEY}`,
     );
     const videos = videosResponse.data.items;
 
