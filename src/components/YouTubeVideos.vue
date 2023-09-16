@@ -4,6 +4,7 @@
     :itemsToScroll="2"
     :wrapAround="true"
     :autoplay="2000"
+    :pauseAutoplayOnHover="true"
   >
     <Slide v-for="video in videos" :key="video.id">
       <div class="w-full flex flex-col">
