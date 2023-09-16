@@ -4,6 +4,7 @@ import Card from "../components/Card.astro";
 import logos from "../images/new-logos.png";
 import logosSmall from "../images/new-logos-small.png";
 import Showcase from "../components/Showcase.astro";
+import YouTubeProfile from "../components/YouTubeProfile.astro";
 import ImageCarousel from "../components/ImageCarousel.vue";
 import { Image } from "astro:assets";
 export const prerender = false;
@@ -17,6 +18,11 @@ const text =
   <section class="page-content">
     <div class="container" style="text-justify: auto; text-align: center">
       <Card><ImageCarousel client:load /></Card>
+
+      <div id="YouTubeProfile">
+        <h1>YouTube</h1>
+        <YouTubeProfile />
+      </div>
 
       <div style="width: 100%; display: flex; justify-content: center;">
         <div
