@@ -2,7 +2,7 @@
 import YouTubeVideos from "./YouTubeVideos.vue";
 import axios from "axios";
 
-const API_KEY = import.meta.env.SECRET_PASSWORD_YOUTUBE;
+const API_KEY = import.meta.env.PUBLIC_API_KEY_YOUTUBE;
 const CHANNEL_ID = import.meta.env.PUBLIC_YOUTUBE_CHANNEL;
 const URL = `https://www.googleapis.com/youtube/v3/channels?part=snippet,contentDetails,statistics&id=${CHANNEL_ID}&key=${API_KEY}`;
 
@@ -32,7 +32,7 @@ async function getYouTubeVideos() {
 
     // Step 2: Get the videos using the "uploads" playlist ID
     const videosResponse = await axios.get(
-      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=4&playlistId=${uploadsPlaylistId}&key=${API_KEY}`,
+      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=20&playlistId=${uploadsPlaylistId}&key=${API_KEY}`,
     );
     const videos = videosResponse.data.items;
 
