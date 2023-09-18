@@ -1,5 +1,5 @@
 <template>
-  <Carousel>
+  <Carousel :wrapAround="true" :autoplay="3000" :pauseAutoplayOnHover="true">
     <Slide v-for="(image, index) in images" :key="index">
       <div class="flex flex-col">
         <img
