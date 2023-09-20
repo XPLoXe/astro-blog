@@ -54,7 +54,7 @@
               target="_blank"
             >
               <p
-                class="text-purple-800 text-sm font-bold items-center sm:text-xs"
+                class="text-purple-800 sm:text-sm font-bold items-center text-xs"
               >
                 {{ video.snippet.title }}
               </p>
