@@ -53,7 +53,9 @@
               :href="`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`"
               target="_blank"
             >
-              <p class="text-purple-800 text-sm font-bold items-center">
+              <p
+                class="text-purple-800 text-sm font-bold items-center sm:text-xs"
+              >
                 {{ video.snippet.title }}
               </p>
             </a>
