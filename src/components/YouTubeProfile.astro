@@ -12,7 +12,6 @@ async function getYouTubeChannel() {
   try {
     const response = await axios.get(URL);
     const channel = response.data.items[0];
-    console.log(channel);
     return channel;
   } catch (error) {
     console.error(
@@ -29,7 +28,6 @@ async function getYouTubeVideoDuration(videoId) {
       `https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=${videoId}&key=${API_KEY}`,
     );
     const video = response.data.items[0];
-    console.log(video);
     return video;
   } catch (error) {
     console.error(
@@ -46,7 +44,6 @@ async function getYouTubeVideoStadistics(videoId) {
       `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${API_KEY}`,
     );
     const video = response.data.items[0];
-    console.log(video);
     return video;
   } catch (error) {
     console.error(
@@ -77,7 +74,6 @@ async function getYouTubeVideos() {
       videos[i].contentDetails.duration = videoDuration.contentDetails.duration;
       videos[i].statistics = videoStadistics.statistics;
     }
-    console.log(videos.length);
     return videos;
   } catch (error) {
     console.error(
