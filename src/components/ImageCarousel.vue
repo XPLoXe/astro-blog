@@ -70,34 +70,6 @@ export default defineComponent({
           description: "Barcelona, Spain",
         },
       ],
-
-      // images: [
-      //   {
-      //     src: "../src/images/about-pic1.jpg",
-      //     alt: "Slide image 1",
-      //     description: "Alejandro Bocchicchio Mesa",
-      //   },
-      //   {
-      //     src: "../src/images/about-pic2.jpg",
-      //     alt: "Slide image 2",
-      //     description: "Bariloche, Argentina",
-      //   },
-      //   {
-      //     src: "../src/images/about-pic3.jpg",
-      //     alt: "Slide image 3",
-      //     description: "Highlands Bowl, Aspen, Colorado",
-      //   },
-      //   {
-      //     src: "../src/images/about-pic4.jpg",
-      //     alt: "Slide image 4",
-      //     description: "Mar del Plata, Argentina",
-      //   },
-      //   {
-      //     src: "../src/images/about-pic5.jpg",
-      //     alt: "Slide image 5",
-      //     description: "Barcelona, Spain",
-      //   },
-      // ],
     };
   },
 });

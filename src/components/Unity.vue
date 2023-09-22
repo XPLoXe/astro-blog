@@ -29,7 +29,6 @@ const getDesc = () => {
     title.value = "Balls of Steel";
     desc.value =
       "This game holds a profound attachment for me. It began as a playful prototype while I tested some Unity mechanics, and before long, I was fully immersed in it, consistently releasing updates. The game's growth took off when I shared it with friends, and their enjoyment, along with their suggestions for improvements, motivated me. One by one, I implemented their advice, enhancing the game with updates and new features. Soon after, a couple of musician friends were so impressed that they offered to create the game's music and sounds, and you can find their names in the game's credits within the menu.";
-    // full description here
   }
   if (
     url.value ===
@@ -38,7 +37,6 @@ const getDesc = () => {
     title.value = "Clicky Crate";
     desc.value =
       "While practicing scripts in the Junior Unity Programmer Pathway, I developed this game and felt it would be a missed opportunity not to preserve and utilize it.";
-    // full description here
   }
 };
 

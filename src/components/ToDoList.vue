@@ -24,7 +24,6 @@
     </div>
 
     <!-- To Do List -->
-
     <transition-group name="list" tag="ul">
       <li
         v-for="(todo, index) in todos"
@@ -71,7 +70,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, nextTick } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import confetti from "canvas-confetti";
 import { uid } from "uid";
 

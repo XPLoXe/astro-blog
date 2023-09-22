@@ -6,8 +6,6 @@ const API_KEY = import.meta.env.PUBLIC_API_KEY_YOUTUBE;
 const CHANNEL_ID = import.meta.env.PUBLIC_YOUTUBE_CHANNEL;
 const URL = `https://www.googleapis.com/youtube/v3/channels?part=snippet,contentDetails,statistics&id=${CHANNEL_ID}&key=${API_KEY}`;
 
-//let videos = [];
-
 async function getYouTubeChannel() {
   try {
     const response = await axios.get(URL);
@@ -198,7 +196,6 @@ const videos = await getYouTubeVideos();
 ---
 
 <div>
-  <!-- display channelInfo properties here using talwindCSS -->
   <h1 class="text-4xl font-bold text-center text-primary">
     {channelInfo.snippet.title}
   </h1>
