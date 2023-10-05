@@ -13,8 +13,12 @@ import { slide } from "astro:transitions";
   />
 
   <section>
-    <div class="flex flex-col sm:flex-row justify-between">
-      <div class="mb-2 sm:mb-0 py-4 text-center sm:text-left">
+    <div
+      class="lg:flex grid grid-cols-2 sm:flex-row lg:grid-cols-3 lg:justify-between"
+    >
+      <div
+        class="py-2 text-center sm:text-left lg:order-1 lg:flex-none mr-auto"
+      >
         <a href="/to-do-list">
           <button
             type="button"
@@ -27,20 +31,20 @@ import { slide } from "astro:transitions";
       </div>
 
       <div
-        class="flex-grow"
+        class="order-last col-span-2 lg:col-span-1 lg:order-2 lg:flex-1 overflow-auto"
         transition:name="tool"
         transition:animate={slide({ duration: "1s" })}
       >
-        <div
-          class="w-full px-8 mx-auto sm:max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-5xl py-4"
-        >
+        <div class="w-11/12 px-4 mx-auto py-4">
           <Card>
             <HabitTrackerApp client:load />
           </Card>
         </div>
       </div>
 
-      <div class="mt-2 sm:mt-0 py-4 text-center sm:text-right">
+      <div
+        class="py-2 text-center sm:text-right lg:order-3 lg:flex-none ml-auto"
+      >
         <a href="/to-do-list">
           <button
             type="button"

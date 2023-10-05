@@ -10,19 +10,19 @@
     />
     <button
       @click.prevent="addHabit"
-      class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"
+      class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 my-2 mx-1 transition duration-500 hover:bg-purple-600 hover:text-white"
     >
       Add Habit
     </button>
     <button
       @click.prevent="clearAllConfirmation"
-      class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"
+      class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 my-2 mx-1 transition duration-500 hover:bg-purple-600 hover:text-white"
     >
       Clear All Checkboxes
     </button>
     <button
       @click.prevent="removeAllConfirmation"
-      class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"
+      class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 my-2 mx-1 transition duration-500 hover:bg-purple-600 hover:text-white"
     >
       Eliminate All Habits
     </button>
