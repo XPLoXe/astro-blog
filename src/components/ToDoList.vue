@@ -35,26 +35,33 @@
         @drop="handleDrop(index)"
       >
         <div
-          class="bg-white p-5 rounded-lg shadow-md mb-5 cursor-move flex flex-col sm:flex-row justify-between items-center"
+          class="bg-white p-5 rounded-lg shadow-md mb-5 cursor-move sm:flex items-center grid grid-cols-1"
         >
-          <div class="mb-3 sm:mb-0">
-            <input
-              type="checkbox"
-              class="cursor-pointer glow-element"
-              @change="completeToDo(index)"
-              :checked="todo.completed"
-            />
+          <div class="flex sm:justify-center sm:flex-1">
+            <!--check box-->
+            <div class="mb-3 sm:mb-0 w-8 h-8 sm:flex-none">
+              <input
+                type="checkbox"
+                class="cursor-pointer glow-element"
+                @change="completeToDo(index)"
+                :checked="todo.completed"
+              />
+            </div>
+
+            <!--To Do-->
+            <div class="mb-3 sm:mb-0 ml-4 w-auto sm:flex-1 grow text-center">
+              <span
+                :class="{
+                  'line-through': todo.completed,
+                }"
+              >
+                {{ todo.text }}
+              </span>
+            </div>
           </div>
-          <div class="mb-3 sm:mb-0 flex-grow text-center">
-            <span
-              :class="{
-                'line-through': todo.completed,
-              }"
-            >
-              {{ todo.text }}
-            </span>
-          </div>
-          <div class="">
+
+          <!--Remove-->
+          <div class="sm:ml-auto sm:mr-0 mx-auto sm:justify-end w-28 flex-none">
             <button
               @click="removeTodo(index)"
               class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"

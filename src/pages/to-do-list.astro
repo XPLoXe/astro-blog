@@ -12,9 +12,10 @@ import Card from "../components/Card.astro";
     text="Simply by crossing a 'to-do' off a list, your brain releases endorphins to keep you motivated throughout the day. Simple, yet powerful."
   />
 
-  <section class="page-content">
-    <div class="flex justify-between">
-      <div class="">
+  <section>
+    <div class="lg:flex justify-between grid grid-cols-2">
+      <!--Button prev -->
+      <div class="order-1 mr-auto py-2">
         <a href="/habit-tracker">
           <button
             type="button"
@@ -26,19 +27,20 @@ import Card from "../components/Card.astro";
         </a>
       </div>
 
+      <!--content -->
       <div
-        class="flex-grow"
+        class="lg:flex-grow col-span-2 order-3 lg:order-2 mx-8 mt-4"
         transition:name="tool"
         transition:animate={slide({ duration: "1s" })}
       >
-        <div class="container">
+        <div class="w-full">
           <Card>
             <ToDo client:load />
           </Card>
         </div>
       </div>
-
-      <div class="">
+      <!--Button next -->
+      <div class="order-2 ml-auto py-2 lg:order-3">
         <a href="/habit-tracker">
           <button
             type="button"
