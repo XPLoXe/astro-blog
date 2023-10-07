@@ -1,13 +1,13 @@
 <template>
   <div class="min-h-[37vh]">
     <!--Input-->
-    <div class="text-center mb-4">
+    <div class="mb-4 text-center">
       <input
         type="text"
         v-model="newTodo"
         @keyup.enter="addTodo"
         placeholder="Add a new todo"
-        class="border-b-2 border-purple-600 bg-purple-100 bg-opacity-0 rounded-t p-2 text-purple-600 focus:outline-none focus:bg-opacity-100"
+        class="p-2 text-purple-600 bg-purple-100 bg-opacity-0 border-b-2 border-purple-600 rounded-t focus:outline-none focus:bg-opacity-100"
       />
       <button
         @click="addTodo"
@@ -35,11 +35,11 @@
         @drop="handleDrop(index)"
       >
         <div
-          class="bg-white p-5 rounded-lg shadow-md mb-5 cursor-move sm:flex items-center grid grid-cols-1"
+          class="grid items-center grid-cols-1 p-5 mb-5 bg-white rounded-lg shadow-md cursor-move sm:flex"
         >
           <div class="flex sm:justify-center sm:flex-1">
             <!--check box-->
-            <div class="mb-3 sm:mb-0 w-8 h-8 sm:flex-none">
+            <div class="w-8 h-8 mb-3 sm:mb-0 sm:flex-none">
               <input
                 type="checkbox"
                 class="cursor-pointer glow-element"
@@ -49,7 +49,7 @@
             </div>
 
             <!--To Do-->
-            <div class="mb-3 sm:mb-0 ml-4 w-auto sm:flex-1 grow text-center">
+            <div class="w-auto mb-3 ml-4 text-center sm:mb-0 sm:flex-1 grow">
               <span
                 :class="{
                   'line-through': todo.completed,
@@ -61,7 +61,7 @@
           </div>
 
           <!--Remove-->
-          <div class="sm:ml-auto sm:mr-0 mx-auto sm:justify-end w-28 flex-none">
+          <div class="flex-none mx-auto sm:ml-auto sm:mr-0 sm:justify-end w-28">
             <button
               @click="removeTodo(index)"
               class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"

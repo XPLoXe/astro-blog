@@ -10,10 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "^3.0.1",
-    "@astrojs/tailwind": "^5.0.0",
-    "@astrojs/vue": "^3.0.0",
-    "astro": "^3.0.10",
+    "@astrojs/netlify": "^3.0.2",
+    "@astrojs/tailwind": "^5.0.1",
+    "@astrojs/vue": "^3.0.1",
+    "astro": "^3.2.3",
     "axios": "^1.5.0",
     "base": "^3.0.0",
     "canvas-confetti": "^1.6.0",
@@ -24,8 +24,8 @@
     "vue3-carousel": "^0.3.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.15",
-    "postcss": "^8.4.28",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
     "postcss-nested": "^6.0.1",
     "prettier": "^3.0.3",
     "prettier-plugin-astro": "^0.12.0",
