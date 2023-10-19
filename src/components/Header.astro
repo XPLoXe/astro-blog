@@ -7,26 +7,30 @@ import { Image } from "astro:assets";
 
 <div class="bg-primary">
   <!-- Nav container  -->
-  <nav class="container relative mx-auto">
+  <nav class="container relative pl-0 pr-0 mx-auto">
     <!-- Nav Bar  -->
     <div
-      class="flex flex-col items-center justify-between p-10 mt-4 space-y-8 xl:space-x-12 xl:space-y-0 xl:flex-row"
+      class="flex flex-row items-center justify-between p-4 mx-3 mt-6 space-y-8 sm:flex-col lg:space-x-8 lg:space-y-0 lg:flex-row"
     >
       <!-- Logos -->
       <div
-        class="flex flex-col items-center justify-center sm:space-x-4 sm:flex-row"
+        class="flex flex-row items-center justify-center sm:space-x-4 sm:flex-row"
       >
         <a href="index.html">
-          <Image class="w-20 h-20" alt="icon-monkey" src={icon} />
+          <Image
+            class="w-16 h-16 sm:h-20 sm:w-20"
+            alt="icon-monkey"
+            src={icon}
+          />
         </a>
         <a href="index.html">
-          <Image class="" alt="logo-title" src={logo} />
+          <Image class="w-72 sm:w-full" alt="logo-title" src={logo} />
         </a>
       </div>
 
       <!-- Links  -->
       <div
-        class="flex flex-row items-center justify-between space-x-6 font-bold text-center transition text-terciary"
+        class="flex-row items-center justify-between hidden space-x-6 font-bold text-center transition sm:flex text-terciary lg:space-x-2"
       >
         <a href="/" class="nav-btn"> Home</a>
 
@@ -117,6 +121,16 @@ import { Image } from "astro:assets";
 
         <a href="/blog" class="nav-btn"> Blog</a>
       </div>
+
+      <!-- Hamburger Button  -->
+      <button
+        id="menu-btn"
+        class="z-30 block sm:hidden focus:outline-none hamburger"
+      >
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+      </button>
     </div>
   </nav>
 </div>
