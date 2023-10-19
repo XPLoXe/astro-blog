@@ -8,6 +8,7 @@ export default {
         "weather-secondary": "#6b21a8",
         primary: "#0f172a",
         secondary: "#6b21a8",
+        terciary: "#9400D3",
       },
     },
     fontFamily: {
