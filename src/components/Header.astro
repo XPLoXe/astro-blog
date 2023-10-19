@@ -3,6 +3,7 @@ import { fade, slide } from "astro:transitions";
 import logo from "../images/monkey-business.png";
 import icon from "../images/icon-monkey.png";
 import { Image } from "astro:assets";
+import MobileMenu from "./MobileMenu.vue";
 ---
 
 <div class="bg-primary">
@@ -38,7 +39,7 @@ import { Image } from "astro:assets";
         <div class="relative py-1 outline-none group" tabindex="1">
           <div
             id="tools"
-            class="flex items-center justify-between px-4 py-2 space-x-2 transition duration-500 border rounded-full cursor-pointer group group-hover:scale-110 ease group-hover:bg-gray-50"
+            class="flex items-center justify-between px-4 py-2 space-x-2 transition duration-500 border rounded-full cursor-pointer group group-hover:scale-110 ease group-hover:bg-gray-50 group-focus:scale-110 group-focus:bg-gray-50"
           >
             <div class="">Games</div>
             <!-- Arrow -->
@@ -53,18 +54,14 @@ import { Image } from "astro:assets";
             </div>
           </div>
           <!-- Tab Inner Content -->
-          <div
-            class="absolute z-10 flex flex-col w-48 space-y-8 overflow-hidden transition duration-500 bg-primary opacity-95 top-12 max-h-0 text-terciary group-hover:max-h-screen group-hover:p-6"
-          >
+          <div class="tab-content-bg">
             <a
               href="/game?search=https://64e50a20839a9019d51bb911--delicate-belekoy-4e9031.netlify.app/"
-              class="w-auto p-3 duration-200 border-b-0 border-secondary hover:border-b-2 hover:scale-110"
-              >Balls of Steel</a
+              class="tab-content">Balls of Steel</a
             >
             <a
               href="/game?search=https://64e88ff4dd8a1c0a6a4fb402--wondrous-cajeta-945cf0.netlify.app/"
-              class="p-3 duration-200 border-b-0 hover:border-b-2 hover:scale-110 border-secondary"
-              >Clicky Crates</a
+              class="tab-content">Clicky Crates</a
             >
           </div>
         </div>
@@ -73,7 +70,7 @@ import { Image } from "astro:assets";
         <div class="relative py-1 outline-none group" tabindex="1">
           <div
             id="tools"
-            class="flex items-center justify-between px-4 py-2 space-x-2 transition duration-500 border rounded-full cursor-pointer group group-hover:scale-110 ease group-hover:bg-gray-50"
+            class="flex items-center justify-between px-4 py-2 space-x-2 transition duration-500 border rounded-full cursor-pointer group group-hover:scale-110 ease group-hover:bg-gray-50 group-focus:scale-110 group-focus:bg-gray-50"
           >
             <div class="">Tools</div>
             <!-- Arrow -->
@@ -90,28 +87,13 @@ import { Image } from "astro:assets";
             </div>
           </div>
           <!-- Tab Inner Content -->
-          <div
-            class="absolute z-10 flex flex-col w-48 space-y-8 overflow-hidden font-bold transition duration-500 bg-primary opacity-95 top-12 max-h-0 text-terciary group-hover:max-h-screen group-hover:p-6"
-          >
-            <a
-              href="/to-do-list"
-              class="w-auto p-3 duration-200 border-b-0 border-secondary hover:border-b-2 hover:scale-110"
-              >To Do List</a
-            >
-            <a
-              href="/habit-tracker"
-              class="p-3 duration-200 border-b-0 hover:border-b-2 hover:scale-110 border-secondary"
-              >Habit Tracker</a
-            >
-            <a
-              href="/weather-app"
-              target="_parent"
-              class="p-3 duration-200 border-b-0 hover:border-b-2 hover:scale-110 border-secondary"
+          <div class="tab-content-bg">
+            <a href="/to-do-list" class="tab-content">To Do List</a>
+            <a href="/habit-tracker" class="tab-content">Habit Tracker</a>
+            <a href="/weather-app" target="_parent" class="tab-content"
               >Weather App</a
             >
-            <a
-              href="/about#YouTubeProfile"
-              class="p-3 duration-200 border-b-0 hover:border-b-2 hover:scale-110 border-secondary"
+            <a href="/about#YouTubeProfile" class="tab-content"
               >YouTube Profile</a
             >
           </div>
@@ -122,17 +104,7 @@ import { Image } from "astro:assets";
         <a href="/blog" class="nav-btn"> Blog</a>
       </div>
 
-      <!-- Hamburger Button  -->
-      <button
-        id="menu-btn"
-        class="z-30 block sm:hidden focus:outline-none hamburger"
-      >
-        <span class="hamburger-top"></span>
-        <span class="hamburger-middle"></span>
-        <span class="hamburger-bottom"></span>
-      </button>
+      <MobileMenu client:visible />
     </div>
   </nav>
 </div>
-
-<script></script>

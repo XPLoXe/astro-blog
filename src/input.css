@@ -33,6 +33,14 @@
   @apply px-4 py-2 transition duration-500 border rounded-full hover:bg-gray-50 hover:scale-110;
 }
 
+.tab-content {
+  @apply p-3 duration-200 rounded-full border-violet-900 hover:border-4 hover:scale-110;
+}
+
+.tab-content-bg {
+  @apply absolute z-10 flex flex-col w-48 space-y-4 overflow-hidden font-bold transition duration-500 rounded-3xl bg-secondary opacity-95 top-12 max-h-0 text-primary group-hover:max-h-screen group-hover:p-6 group-focus:max-h-screen group-focus:p-6;
+}
+
 .hamburger {
   cursor: pointer;
   width: 24px;
@@ -47,7 +55,7 @@
   position: absolute;
   width: 24px;
   height: 2px;
-  top: -10px;
+  top: 0px;
   left: 0;
   background: #fff;
   transform: rotate(0);
