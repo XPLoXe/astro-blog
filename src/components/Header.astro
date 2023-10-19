@@ -1,6 +1,7 @@
 ---
 import { fade, slide } from "astro:transitions";
 import logo from "../images/monkey-business.png";
+import icon from "../images/icon-monkey.png";
 import { Image } from "astro:assets";
 ---
 
@@ -14,13 +15,8 @@ import { Image } from "astro:assets";
   <div class="container">
     <div class="image-container">
       <a href="index.html">
-        <img
-          width="75"
-          height="75"
-          src="https://img.icons8.com/nolan/96/year-of-monkey.png"
-          alt="year-of-monkey"
-        />
-        <Image class="title" alt="logo-title" src={logo} />
+        <Image class="w-20 h-20" alt="icon-monkey" src={icon} />
+        <Image class="" alt="logo-title" src={logo} />
       </a>
     </div>
 
@@ -33,7 +29,7 @@ import { Image } from "astro:assets";
           <li><a href="/">Home</a></li>
           <li>
             <a href="#">Games &dtrif;</a>
-            <ul class="dropdown z-10">
+            <ul class="z-10 dropdown">
               <li>
                 <a
                   href="/game?search=https://64e50a20839a9019d51bb911--delicate-belekoy-4e9031.netlify.app/"
@@ -50,7 +46,7 @@ import { Image } from "astro:assets";
           </li>
           <li>
             <a href="#">Tools &dtrif;</a>
-            <ul class="dropdown z-10">
+            <ul class="z-10 dropdown">
               <li>
                 <a
                   href="/to-do-list"
