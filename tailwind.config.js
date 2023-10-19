@@ -19,6 +19,7 @@ export default {
     },
     screens: {
       //breakpoints
+      xs: "543px",
       sm: "640px",
       md: "768px",
       lg: "900px",
