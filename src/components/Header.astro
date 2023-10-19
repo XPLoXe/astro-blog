@@ -11,11 +11,15 @@ import { Image } from "astro:assets";
     rel="stylesheet"
   />
 
-  <!-- Logos -->
   <div class="container">
-    <div class="image-container">
+    <!-- Logos -->
+    <div
+      class="flex flex-col items-center justify-center space-x-4 xs:flex-row"
+    >
       <a href="index.html">
         <Image class="w-20 h-20" alt="icon-monkey" src={icon} />
+      </a>
+      <a href="index.html">
         <Image class="" alt="logo-title" src={logo} />
       </a>
     </div>
@@ -84,15 +88,6 @@ import { Image } from "astro:assets";
 </header>
 
 <style>
-  .image-container {
-    text-align: center; /* Optional: Center the images horizontally */
-  }
-
-  .image-container img {
-    display: inline-block;
-    margin-right: 10px; /* Add spacing between the images */
-  }
-
   nav.primary-navigation {
     margin: 0 auto;
     display: flex;
