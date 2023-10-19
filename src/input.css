@@ -38,7 +38,7 @@
 }
 
 .tab-content-bg {
-  @apply absolute z-10 flex flex-col w-48 space-y-4 overflow-hidden font-bold transition duration-500 rounded-3xl bg-secondary opacity-95 top-12 max-h-0 text-primary group-hover:max-h-screen group-hover:p-6 group-focus:max-h-screen group-focus:p-6;
+  @apply absolute z-10 flex flex-col w-52 space-y-4 overflow-hidden font-bold transition duration-500 rounded-3xl bg-secondary opacity-95 top-12 max-h-0 text-primary group-hover:max-h-screen group-hover:p-6 group-focus:max-h-screen group-focus:p-6;
 }
 
 .hamburger {
