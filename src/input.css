@@ -72,6 +72,9 @@
 
 .open {
   transform: rotate(90deg);
+  position: fixed;
+  top: 50px;
+  right: 25px;
 }
 
 .open .hamburger-top {
