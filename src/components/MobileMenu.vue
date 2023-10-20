@@ -3,7 +3,7 @@
   <button
     id="menu-btn"
     @click="toggleMenu()"
-    class="z-30 block sm:hidden focus:outline-none hamburger"
+    class="z-30 block ml-4 sm:hidden focus:outline-none hamburger"
     :class="{ open: isBtn }"
   >
     <span class="hamburger-top"></span>

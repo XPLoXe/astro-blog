@@ -8,7 +8,7 @@ import MobileMenu from "./MobileMenu.vue";
 
 <div class="bg-primary">
   <!-- Nav container  -->
-  <nav class="container relative pl-0 pr-0 mx-auto">
+  <nav class="container relative pl-0 pr-0">
     <!-- Nav Bar  -->
     <div
       class="flex flex-row items-center justify-between p-4 mx-3 mt-6 space-x-4 space-y-8 sm:flex-col lg:space-x-8 lg:space-y-0 lg:flex-row"
@@ -105,9 +105,7 @@ import MobileMenu from "./MobileMenu.vue";
       </div>
 
       <!-- Mobile Menu  -->
-      <div>
-        <MobileMenu client:visible />
-      </div>
+      <MobileMenu client:visible />
     </div>
   </nav>
 </div>
