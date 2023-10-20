@@ -19,7 +19,7 @@ const text =
     <div class="container" style="text-justify: auto; text-align: center">
       <Card><ImageCarousel client:load /></Card>
 
-      <div id="YouTubeProfile">
+      <div id="youtube-profile">
         <h1>YouTube</h1>
 
         <YouTubeProfile />
@@ -40,11 +40,11 @@ const text =
       </div>
     </div>
 
-    <div class="flex flex-1 flex-col items-center">
+    <div class="flex flex-col items-center flex-1">
       <div class="image">
         <!-- Show this image for large screens and hide for small -->
         <Image
-          class="image hidden lg:inline-block"
+          class="hidden image lg:inline-block"
           id="logo"
           src={logos}
           alt="technologies flyer"
@@ -53,7 +53,7 @@ const text =
         />
         <!-- Show this image for small screens and hide for large -->
         <Image
-          class="image inline-block lg:hidden"
+          class="inline-block image lg:hidden"
           id="logo-small"
           src={logosSmall}
           alt="technologies flyer small"
