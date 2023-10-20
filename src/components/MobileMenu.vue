@@ -103,7 +103,7 @@
             >Weather App</a
           >
           <a
-            href="/about#youtube-profile"
+            href="/about/#youtube-profile"
             class="p-3 duration-200 border-b-0 hover:border-b-2 hover:scale-110 border-secondary"
             >YouTube Profile</a
           >
