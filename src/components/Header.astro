@@ -88,8 +88,18 @@ import MobileMenu from "./MobileMenu.vue";
           </div>
           <!-- Tab Inner Content -->
           <div class="tab-content-bg">
-            <a href="/to-do-list" class="tab-content">To Do List</a>
-            <a href="/habit-tracker" class="tab-content">Habit Tracker</a>
+            <a
+              href="/to-do-list"
+              class="tab-content"
+              transition:name="to-do-list"
+              transition:animate={slide({ duration: "1s" })}>To Do List</a
+            >
+            <a
+              href="/habit-tracker"
+              class="tab-content"
+              transition:name="habit-tracker"
+              transition:animate={slide({ duration: "1s" })}>Habit Tracker</a
+            >
             <a href="/weather-app" target="_parent" class="tab-content"
               >Weather App</a
             >
