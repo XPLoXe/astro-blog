@@ -49,7 +49,7 @@
           class="z-10 flex flex-col space-y-8 overflow-hidden transition duration-500 bg-primary opacity-95 w-60 max-h-0 text-terciary group-hover:max-h-screen group-hover:p-6 group-focus:max-h-screen group-focus:p-6"
         >
           <a
-            href="/game?search=https://64e50a20839a9019d51bb911--delicate-belekoy-4e9031.netlify.app/"
+            href="/game?search=https://balls-of-steel.netlify.app/"
             class="w-auto p-3 duration-200 border-b-0 border-secondary hover:border-b-2 hover:scale-110"
             >Balls of Steel</a
           >
