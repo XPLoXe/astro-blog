@@ -14,7 +14,7 @@ export const prerender = true;
   />
   <section class="page-content">
     <div>
-      <div class="container">
+      <div class="container flex flex-col gap-12 xl:grid xl:grid-cols-2">
         {
           posts
             .sort(
@@ -24,22 +24,26 @@ export const prerender = true;
             )
             .map((post) => (
               <Card>
-                <div transition:name={`post-header-${post.frontmatter.slug}`}>
-                  <h3>{post.frontmatter.title}</h3>
+                <div class="h-64">
+                  <div transition:name={`post-header-${post.frontmatter.slug}`}>
+                    <h3>{post.frontmatter.title}</h3>
+                  </div>
+
+                  <div transition:name={`post-author-${post.frontmatter.slug}`}>
+                    Written by <strong> {post.frontmatter.author}</strong> on
+                    {new Date(post.frontmatter.date).toLocaleDateString()}
+                  </div>
+                  <br />
+
+                  <div transition:name={`post-body-${post.frontmatter.slug}`}>
+                    <p>{post.frontmatter.excerpt}</p>
+                  </div>
                 </div>
 
-                <div transition:name={`post-author-${post.frontmatter.slug}`}>
-                  Written by <strong> {post.frontmatter.author}</strong> on
-                  {new Date(post.frontmatter.date).toLocaleDateString()}
-                </div>
-                <br />
-
-                <div transition:name={`post-body-${post.frontmatter.slug}`}>
-                  <p>{post.frontmatter.excerpt}</p>
-                </div>
-
-                <br />
-                <div transition:name={`post-button-${post.frontmatter.slug}`}>
+                <div
+                  class="absolute bottom-6 left-4"
+                  transition:name={`post-button-${post.frontmatter.slug}`}
+                >
                   <a class="btn-white-bg" href={`/${post.frontmatter.slug}`}>
                     Read More
                   </a>
