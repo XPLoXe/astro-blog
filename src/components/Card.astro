@@ -7,21 +7,10 @@ export interface Props {
 const { dark = false, text = "" } = Astro.props as Props;
 ---
 
-<div class={`card ${dark && "dark"}`}>
+<div
+  class={`card ${
+    dark ? "bg-primary text-white" : "bg-white"
+  } p-5 rounded-lg shadow-lg mb-5 shadow-purple-400 relative hover:shadow-purple-500 hover:-translate-y-1 transition-all duration-300`}
+>
   <slot>{text}</slot>
 </div>
-
-<style>
-  .card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px 10px rgba(117, 0, 163, 0.171);
-    margin-bottom: 20px;
-  }
-
-  .dark {
-    background: var(--color-primary);
-    color: white;
-  }
-</style>

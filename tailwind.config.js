@@ -12,7 +12,7 @@ export default {
       },
     },
     fontFamily: {
-      Roboto: ["Roboto, sans-serif"],
+      sans: ["Playpen Sans", "sans-serif"],
     },
     container: {
       padding: "2rem",

@@ -1,0 +1,77 @@
+---
+import Card from "../components/Card.astro";
+
+interface Props {
+  displayLatest?: boolean;
+}
+const { displayLatest = false } = Astro.props;
+
+const posts = await Astro.glob("../posts/*.md");
+const sortedPosts = posts.sort(
+  (a, b) =>
+    new Date(String(b.frontmatter.date)).getTime() -
+    new Date(String(a.frontmatter.date)).getTime(),
+);
+---
+
+<div class="container flex flex-col gap-12 xl:grid xl:grid-cols-2">
+  {
+    !displayLatest
+      ? sortedPosts.map((post) => (
+          <Card>
+            <div class="h-auto pb-16">
+              <div transition:name={`post-header-${post.frontmatter.slug}`}>
+                <h3 class="font-bold">{post.frontmatter.title}</h3>
+              </div>
+
+              <div transition:name={`post-author-${post.frontmatter.slug}`}>
+                Written by <strong> {post.frontmatter.author}</strong> on
+                {new Date(post.frontmatter.date).toLocaleDateString()}
+              </div>
+              <br />
+
+              <div transition:name={`post-body-${post.frontmatter.slug}`}>
+                <p>{post.frontmatter.excerpt}</p>
+              </div>
+            </div>
+
+            <div
+              class="absolute bottom-6 left-4"
+              transition:name={`post-button-${post.frontmatter.slug}`}
+            >
+              <a class="btn-white-bg" href={`/${post.frontmatter.slug}`}>
+                Read More
+              </a>
+            </div>
+          </Card>
+        ))
+      : sortedPosts.slice(0, 2).map((post) => (
+          <Card>
+            <div class="h-auto pb-16">
+              <div transition:name={`post-header-${post.frontmatter.slug}`}>
+                <h3 class="mb-4 text-xl font-bold">{post.frontmatter.title}</h3>
+              </div>
+
+              <div transition:name={`post-author-${post.frontmatter.slug}`}>
+                Written by <strong> {post.frontmatter.author}</strong> on
+                {new Date(post.frontmatter.date).toLocaleDateString()}
+              </div>
+              <br />
+
+              <div transition:name={`post-body-${post.frontmatter.slug}`}>
+                <p>{post.frontmatter.excerpt}</p>
+              </div>
+            </div>
+
+            <div
+              class="absolute bottom-6 left-4"
+              transition:name={`post-button-${post.frontmatter.slug}`}
+            >
+              <a class="btn-white-bg" href={`/${post.frontmatter.slug}`}>
+                Read More
+              </a>
+            </div>
+          </Card>
+        ))
+  }
+</div>

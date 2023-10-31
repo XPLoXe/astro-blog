@@ -12,7 +12,7 @@ const featuresData = [
   },
   {
     title: "We all know how hard life can get",
-    body: "Discover a fresh perspective on life's challenges and find renewed inspiration through our blog's unique insights.",
+    body: "Discover a fresh perspective on life's challenges and find renewed inspiration through this blog's unique insights.",
   },
 ];
 ---
@@ -21,8 +21,8 @@ const featuresData = [
   <div class="container">
     {
       featuresData.map((feature) => (
-        <Card dark={false}>
-          <h3 class="font-bold py-2 text-center">{feature.title}</h3>
+        <Card dark={true}>
+          <h3 class="py-2 font-bold text-center">{feature.title}</h3>
           <p class="text-center">{feature.body}</p>
         </Card>
       ))
