@@ -19,8 +19,8 @@ export const prerender = true;
           posts
             .sort(
               (a, b) =>
-                new Date(String(b.frontmatter.date)) -
-                new Date(String(a.frontmatter.date)),
+                new Date(String(b.frontmatter.date)).getTime() -
+                new Date(String(a.frontmatter.date)).getTime(),
             )
             .map((post) => (
               <Card>
