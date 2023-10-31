@@ -1,9 +1,8 @@
 ---
-import Card from "../components/Card.astro";
 import Showcase from "../components/Showcase.astro";
 import Layout from "../layouts/Layout.astro";
+import BlogCard from "../components/BlogCard.astro";
 
-const posts = await Astro.glob("../posts/*.md");
 export const prerender = true;
 ---
 
@@ -14,44 +13,7 @@ export const prerender = true;
   />
   <section class="page-content">
     <div>
-      <div class="container flex flex-col gap-12 xl:grid xl:grid-cols-2">
-        {
-          posts
-            .sort(
-              (a, b) =>
-                new Date(String(b.frontmatter.date)).getTime() -
-                new Date(String(a.frontmatter.date)).getTime(),
-            )
-            .map((post) => (
-              <Card>
-                <div class="h-64">
-                  <div transition:name={`post-header-${post.frontmatter.slug}`}>
-                    <h3>{post.frontmatter.title}</h3>
-                  </div>
-
-                  <div transition:name={`post-author-${post.frontmatter.slug}`}>
-                    Written by <strong> {post.frontmatter.author}</strong> on
-                    {new Date(post.frontmatter.date).toLocaleDateString()}
-                  </div>
-                  <br />
-
-                  <div transition:name={`post-body-${post.frontmatter.slug}`}>
-                    <p>{post.frontmatter.excerpt}</p>
-                  </div>
-                </div>
-
-                <div
-                  class="absolute bottom-6 left-4"
-                  transition:name={`post-button-${post.frontmatter.slug}`}
-                >
-                  <a class="btn-white-bg" href={`/${post.frontmatter.slug}`}>
-                    Read More
-                  </a>
-                </div>
-              </Card>
-            ))
-        }
-      </div>
+      <BlogCard />
     </div>
   </section>
 </Layout>
