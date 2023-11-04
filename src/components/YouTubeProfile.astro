@@ -230,5 +230,5 @@ const videos = await getYouTubeVideos();
     </div>
   </section>
 
-  <YouTubeVideos videos={videos} channelInfo={channelInfo} client:load />
+  <YouTubeVideos videos={videos} channelInfo={channelInfo} client:only="vue" />
 </div>
