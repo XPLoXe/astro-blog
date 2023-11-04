@@ -1,6 +1,6 @@
 <template>
   <Carousel
-    :items-to-show="3"
+    :items-to-show="getItemsToShow"
     :itemsToScroll="2"
     :wrapAround="true"
     :autoplay="2000"
@@ -64,6 +64,7 @@
 </template>
 
 <script setup>
+import { computed, ref, watchEffect, onUnmounted } from "vue";
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 
@@ -141,6 +142,40 @@ const timeSince = (dateString) => {
 
   return Math.floor(seconds) + " seconds ago";
 };
+
+// Create a reactive reference for the window width
+const windowWidth = ref(window.innerWidth);
+
+// Update windowWidth whenever the window resizes
+watchEffect(() => {
+  const updateWidth = () => {
+    windowWidth.value = window.innerWidth;
+  };
+
+  window.addEventListener("resize", updateWidth);
+
+  // Cleanup the event listener when the component unmounts
+  onUnmounted(() => {
+    window.removeEventListener("resize", updateWidth);
+  });
+});
+
+// Compute the number of items to show based on the window width
+const getItemsToShow = computed(() => {
+  if (windowWidth.value < 640) {
+    return 2;
+  } else if (windowWidth.value < 768) {
+    return 2;
+  } else if (windowWidth.value < 1024) {
+    return 3;
+  } else if (windowWidth.value < 1280) {
+    return 4;
+  } else if (windowWidth.value < 1536) {
+    return 5;
+  } else {
+    return 5;
+  }
+});
 </script>
 
 <style lang="scss" scoped></style>
