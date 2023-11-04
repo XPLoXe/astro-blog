@@ -196,9 +196,39 @@ const videos = await getYouTubeVideos();
 ---
 
 <div>
-  <h1 class="text-4xl font-bold text-center text-primary">
-    {channelInfo.snippet.title}
-  </h1>
+  <section id="youtube-profile-card">
+    <h2 class="mt-16 mb-4">YouTube Channel</h2>
+
+    <div class="flex flex-row items-center justify-start mt-8 mb-8 space-x-8">
+      <!-- Profile Picture -->
+      <div>
+        <a
+          class="w-32 h-32"
+          href="https://www.youtube.com/channel/UCTlsYs4MWFD6b1yGoReg1cQ"
+          target="_blank"
+        >
+          <img
+            class="w-32 h-32 transition-transform duration-300 rounded-full shadow-lg shadow-terciary/50 hover:-translate-y-1"
+            src={channelInfo.snippet.thumbnails.high.url}
+            alt={channelInfo.snippet.title}
+          />
+        </a>
+      </div>
+      <!-- Profile Info -->
+      <div>
+        <a
+          class="text-2xl font-bold text-center text-white transition-all duration-200 hover:text-terciary hover:underline"
+          href="https://www.youtube.com/channel/UCTlsYs4MWFD6b1yGoReg1cQ"
+          target="_blank"
+        >
+          {channelInfo.snippet.title}
+        </a>
+        <p class="text-center text-white">
+          {channelInfo.statistics.subscriberCount} subscribers
+        </p>
+      </div>
+    </div>
+  </section>
 
   <YouTubeVideos videos={videos} channelInfo={channelInfo} client:load />
 </div>

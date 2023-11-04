@@ -19,10 +19,12 @@ const text =
     <div class="container" style="text-justify: auto; text-align: center">
       <Card><ImageCarousel client:load /></Card>
 
-      <div id="youtube-profile">
-        <h1>YouTube</h1>
-
-        <YouTubeProfile />
+      <div class="mt-16">
+        <Card dark={true}>
+          <div id="youtube-profile">
+            <YouTubeProfile />
+          </div>
+        </Card>
       </div>
 
       <div style="width: 100%; display: flex; justify-content: center;">

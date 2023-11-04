@@ -1,6 +1,6 @@
 <template>
   <Carousel
-    :items-to-show="4"
+    :items-to-show="3"
     :itemsToScroll="2"
     :wrapAround="true"
     :autoplay="2000"
@@ -11,7 +11,7 @@
       :key="video.id"
       class="relative z-10 hover:z-20"
     >
-      <div class="w-auto h-auto flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center justify-center w-auto h-auto">
         <div class="">
           <!-- Image Video -->
           <a
@@ -21,32 +21,19 @@
             <div class="relative group hover:z-10">
               <img
                 :src="video.snippet.thumbnails.high.url"
-                class="w-full h-full transform transition-transform duration-300 group-hover:scale-150"
+                class="w-full h-full transition-transform duration-300 transform rounded-lg shadow-lg shadow-terciary/20 group-hover:-translate-y-2"
               />
             </div>
           </a>
 
           <p
-            class="absolute right-2 bottom-2 bg-purple-200 text-purple-700 text-xs px-1 py"
+            class="absolute px-1 text-xs text-purple-700 bg-purple-200 right-2 bottom-2 py"
           >
             {{ convertISO8601ToTime(video.contentDetails.duration) }}
           </p>
         </div>
 
-        <div class="flex flex-row mt-2 gap-2">
-          <!-- Profile Picture -->
-          <div class="row-span-2 col-span-2">
-            <a
-              href="https://www.youtube.com/channel/UCTlsYs4MWFD6b1yGoReg1cQ"
-              target="_blank"
-            >
-              <img
-                :src="channelInfo.snippet.thumbnails.default.url"
-                class="rounded-full h-10 w-10 absolute left-2 bottom-2"
-              />
-            </a>
-          </div>
-
+        <div class="flex flex-row gap-2 mt-2">
           <!-- Description -->
           <div class="flex flex-col items-center justify-center">
             <a
@@ -54,13 +41,13 @@
               target="_blank"
             >
               <p
-                class="text-purple-800 sm:text-sm font-bold items-center text-xs"
+                class="items-center text-xs font-bold text-purple-800 sm:text-sm"
               >
                 {{ video.snippet.title }}
               </p>
             </a>
 
-            <p class="text-gray-400 text-xs mt-1">
+            <p class="mt-1 text-xs text-gray-400">
               {{ video.statistics.viewCount }} Views -
               {{ timeSince(video.snippet.publishedAt) }}
             </p>
