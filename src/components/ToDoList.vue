@@ -64,7 +64,7 @@
           <div class="flex-none mx-auto sm:ml-auto sm:mr-0 sm:justify-end w-28">
             <button
               @click="removeTodo(index)"
-              class="text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"
+              class="flex gap-6 justify-center items-center text-purple-600 border-[0.15em] border-purple-600 rounded-full px-4 py-2 transition duration-500 hover:bg-purple-600 hover:text-white"
             >
               Remove
               <i class="fa-solid fa-trash"></i>
