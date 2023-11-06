@@ -1,6 +1,7 @@
 ---
 import YouTubeVideos from "./YouTubeVideos.vue";
 import axios from "axios";
+import { Image } from "astro:assets";
 
 const API_KEY = import.meta.env.PUBLIC_API_KEY_YOUTUBE;
 const CHANNEL_ID = import.meta.env.PUBLIC_YOUTUBE_CHANNEL;
@@ -207,10 +208,12 @@ const videos = await getYouTubeVideos();
           href="https://www.youtube.com/channel/UCTlsYs4MWFD6b1yGoReg1cQ"
           target="_blank"
         >
-          <img
-            class="w-32 h-32 transition-transform duration-300 rounded-full shadow-lg shadow-terciary/50 hover:-translate-y-1"
+          <Image
+            class="transition-transform duration-300 rounded-full shadow-lg shadow-terciary/50 hover:-translate-y-1"
             src={channelInfo.snippet.thumbnails.high.url}
             alt={channelInfo.snippet.title}
+            width={128}
+            height={128}
           />
         </a>
       </div>
