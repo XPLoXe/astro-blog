@@ -6,7 +6,7 @@
       v-model="newHabit"
       @keyup.enter="addHabit"
       placeholder="Add a Habit to track"
-      class="border-b-2 border-purple-600 bg-purple-100 bg-opacity-0 rounded-t p-2 text-purple-600 focus:outline-none focus:bg-opacity-100"
+      class="p-2 text-purple-600 bg-purple-100 bg-opacity-0 border-b-2 border-purple-600 rounded-t focus:outline-none focus:bg-opacity-100"
     />
     <button
       @click.prevent="addHabit"
@@ -34,7 +34,7 @@
       <thead class="bg-gray-50">
         <tr>
           <td
-            class="px-2 py-3 text-center text-xs font-medium text-gray-500 uppercase"
+            class="px-2 py-3 text-xs font-medium text-center text-gray-500 uppercase"
             v-for="(day, colIndex) in days"
             :key="colIndex"
           >
@@ -64,7 +64,7 @@
             />
             <div v-if="colIndex === 31" class="cursor-pointer">
               <i
-                class="fa-solid fa-trash text-red-500 hover:text-red-700"
+                class="text-red-500 fa-solid fa-trash hover:text-red-700"
                 @click.prevent="removeConfirmation(rowIndex)"
               ></i>
             </div>
@@ -85,37 +85,7 @@ const newHabit = ref("");
 const habits = ref([]);
 const days = ref([
   " ",
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "10",
-  "11",
-  "12",
-  "13",
-  "14",
-  "15",
-  "16",
-  "17",
-  "18",
-  "19",
-  "20",
-  "21",
-  "22",
-  "23",
-  "24",
-  "25",
-  "26",
-  "27",
-  "28",
-  "29",
-  "30",
-  "31",
+  ...Array.from({ length: 31 }, (_, i) => (i + 1).toString()),
 ]);
 
 // Methods
