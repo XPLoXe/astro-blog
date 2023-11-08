@@ -13,13 +13,13 @@ export const prerender = false;
 const { currentPath = Astro.url.searchParams } = Astro.props as Props;
 ---
 
-<Layout title="Blog">
+<Layout title="Games">
   {
     currentPath.toString() ===
-      "search=https%3A%2F%2F64e50a20839a9019d51bb911--delicate-belekoy-4e9031.netlify.app%2F" && (
+      "search=https%3A%2F%2Fballs-of-steel.netlify.app%2F" && (
       <Showcase
         heading="Balls of Steel"
-        text="Remain the sole ball on the platform"
+        text="Remain the sole ball on the platform [PC only]"
         repository="https://github.com/XPLoXe/Balls-of-Steel"
         showRepository={true}
       />
@@ -31,7 +31,7 @@ const { currentPath = Astro.url.searchParams } = Astro.props as Props;
       "search=https%3A%2F%2F64e88ff4dd8a1c0a6a4fb402--wondrous-cajeta-945cf0.netlify.app%2F" && (
       <Showcase
         heading="Clicky Crates"
-        text="Click as many crates as you can. Watch out for the skulls"
+        text="Click as many crates as you can. Watch out for the skulls [PC only]"
         repository="https://github.com/XPLoXe/clicky-crates"
         showRepository={true}
       />

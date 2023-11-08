@@ -30,9 +30,9 @@ const {
   
 ---
 
-<section class="showcase">
-  <div class="showcase-text text-center items-center">
-    <h1 style="line-height:3rem">{heading}</h1>
+<section class="h-auto showcase bg-secondary bg-gradient-to-b from-primary to-transparent p-7">
+  <div class="items-center max-w-5xl mx-auto my-6 text-center text-white">
+    <h1 class="mb-5 text-4xl text-white md:text-5xl">{heading}</h1>
     
       {
         showQuote && (
@@ -44,16 +44,16 @@ const {
     
     
     
-    <p class="mt-12">
+    <p class="mt-12 mb-5 text-lg md:text-xl">
       {text} 
     </p>
 
     {
       showRepository && (
         <i class="fa-brands fa-github"></i>
-        <a href={repository} style="color: rgb(183, 0, 255)">
+        <a href={repository} class="text-purple-500 hover:underline" target="_blank">
           
-          Git Hub Repository
+        Git Hub Repository
         </a>
       )
     }
@@ -62,12 +62,12 @@ const {
   {
     showExtra && (
       <>
-      <div class="showcase-img z-10">
-        <div class="image">
+      <div class="z-10 flex items-center justify-center">
+        <div class="mx-auto rounded-xl">
           <!-- Show this image for large screens and hide for small -->
-          <Image class="image hidden lg:inline-block" id="logo" src={logos} alt="technologies flyer" width="900" height="80"/>
+          <Image class="hidden mx-auto rounded-xl lg:inline-block" id="logo" src={logos} alt="technologies flyer" width="900" height="80"/>
           <!-- Show this image for small screens and hide for large -->
-          <Image class="image inline-block lg:hidden" id="logo-small" src={logosSmall} alt="technologies flyer small" width="250" height="80"/>
+          <Image class="inline-block mx-auto rounded-xl lg:hidden" id="logo-small" src={logosSmall} alt="technologies flyer small" width="250" height="80"/>
         </div>
       </div>
       </>
@@ -79,69 +79,3 @@ const {
   
 </script>
 
-<style>
-  a {
-    color: #a741ff;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  .showcase {
-    height: auto;
-    background-color: var(--color-secondary);
-    background-image: linear-gradient(
-      to bottom,
-      var(--color-primary),
-      rgb(15 23 42 / 0)
-    );
-    padding: 30px;
-  }
-
-  .showcase-blog {
-    min-height: 300px;
-  }
-
-  .showcase-text {
-    max-width: 700px;
-    color: #fff;
-    text-align: center;
-    margin: 25px auto;
-  }
-
-  .showcase h1 {
-    font-size: 50px;
-    color: #fff;
-    margin-bottom: 20px;
-  }
-
-  .showcase p {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-
-  .showcase-img {
-    text-align: center;
-  }
-
-  .showcase-img .image {
-    border-radius: 10px;
-    margin: auto;
-  }
-
-  .showcase-demo {
-    color: #fff;
-    text-align: center;
-    font-weight: 300;
-  }
-
-  .logo-small {
-    display: 0
-  }
-
-  @media (max-width: 975){
-
-  }
-
-</style>
