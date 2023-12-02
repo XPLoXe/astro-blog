@@ -1,49 +1,62 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import axios from "axios";
 
 export async function getStaticPaths() {
-  const posts = await Astro.glob("../posts/*.md");
-  return posts.map((post) => ({
-    params: {
-      slug: post.frontmatter.slug,
-    },
-    props: {
-      post,
-    },
-  }));
+  try {
+    const response = await axios.get("http://localhost:8055/items/posts");
+    console.log(response.data.data);
+    const paths = response.data.data.map((post) => ({
+      params: {
+        slug: post.slug,
+      },
+      props: {
+        post,
+      },
+    }));
+    return paths;
+  } catch (error) {
+    console.error("Error fetching posts for static paths:", error);
+    return [];
+  }
 }
 
-const { Content, frontmatter } = Astro.props.post;
+const { post } = Astro.props;
+console.log(post);
 
 export const prerender = true;
 ---
 
-<Layout title={frontmatter.title}>
-  <section class="page-content">
-    <div class="container">
-      <Card>
-        <div transition:name={`post-button-${frontmatter.slug}`}>
-          <a class="btn-white-bg" href="/blog">Go Back</a>
-        </div>
+<Layout title={post?.title}>
+  {
+    post && (
+      <section class="page-content">
+        <div class="container">
+          <Card>
+            <div transition:name={`post-button-${post.slug}`}>
+              <a class="btn-white-bg" href="/blog">
+                Go Back
+              </a>
+            </div>
 
-        <div transition:name={`post-header-${frontmatter.slug}`}>
-          <h2 class="py-6 text-4xl font-bold text-center">
-            {frontmatter.title}
-          </h2>
-        </div>
+            <div transition:name={`post-header-${post.slug}`}>
+              <h2 class="py-6 text-4xl font-bold text-center">{post.title}</h2>
+            </div>
 
-        <div transition:name={`post-author-${frontmatter.slug}`}>
-          <i>
-            Written by <strong> {frontmatter.author}</strong> on
-            {new Date(frontmatter.date).toLocaleDateString()}
-          </i>
-        </div>
+            <div transition:name={`post-author-${post.slug}`}>
+              <i>
+                Written by <strong> {post.author}</strong> on
+                {new Date(post.date).toLocaleDateString()}
+              </i>
+            </div>
 
-        <div class="py-6" transition:name={`post-body-${frontmatter.slug}`}>
-          <Content />
+            <div class="py-6" transition:name={`post-body-${post.slug}`}>
+              <p>{post.post}</p>
+            </div>
+          </Card>
         </div>
-      </Card>
-    </div>
-  </section>
+      </section>
+    )
+  }
 </Layout>
