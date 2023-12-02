@@ -2,11 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import axios from "axios";
+import { markdownToHtml } from "../utils/markdownToHtml.js";
 
 export async function getStaticPaths() {
   try {
     const response = await axios.get("http://localhost:8055/items/posts");
-    console.log(response.data.data);
     const paths = response.data.data.map((post) => ({
       params: {
         slug: post.slug,
@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-console.log(post);
+const htmlContent = markdownToHtml(post.post);
 
 export const prerender = true;
 ---
@@ -41,7 +41,9 @@ export const prerender = true;
             </div>
 
             <div transition:name={`post-header-${post.slug}`}>
-              <h2 class="py-6 text-4xl font-bold text-center">{post.title}</h2>
+              <h2 class="py-6 text-2xl font-bold leading-10 text-center md:text-4xl md:leading-[3rem]">
+                {post.title}
+              </h2>
             </div>
 
             <div transition:name={`post-author-${post.slug}`}>
@@ -52,7 +54,7 @@ export const prerender = true;
             </div>
 
             <div class="py-6" transition:name={`post-body-${post.slug}`}>
-              <p>{post.post}</p>
+              <span set:html={htmlContent} />
             </div>
           </Card>
         </div>
